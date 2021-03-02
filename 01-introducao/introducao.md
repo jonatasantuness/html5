@@ -61,6 +61,6 @@ Aqui nós temos:
 - ``` <html></html> ``` : Esse elemento envolve todo o conteúdo da página e é conhecido como o elemento raiz.
 - ``` <head></head> ``` : Fazendo a análogia, esse elemento funciona como o "cérebro" do HTML, nele incluimos links para folhas de estilo, scripts, informações relevantes para motores de busca e outras funcionalidades que não ficam visíveis na página.
 - ``` <meta charset="utf-8"> ``` : Metadados são informações que descrevem o conteúdo do seu arquivo, a tag meta deve estar sempre dentro da tag head e pode representar vários tipos de metadados. O atributo charset serve para indicar o formato de codificação de caracteres utilizado no documento.
-*ASCII*, *UTF-8*, *ANSI* e *ISO-8859-1* são exemplos de charsets. Cada charset representa um caracter em memória de uma forma diferente. O charset **UTF-8** é o que usamos na web atual e faz parte de um padrão chamado Unicode.
+*ASCII*, *UTF-8*, *ANSI* e *ISO-8859-1* são exemplos de charsets. Cada charset representa um caracter em memória de uma forma diferente. O charset **UTF-8** é o que usamos na web atual e faz parte de um padrão chamado Unicode, sem ele teriamos problemas ao utilizar palavras com acentuação por exemplo.
 - ``` <title></title> ``` : Define o título da página, o título que aparece na guia do navegador e também é usado para descrever a página ao adicioná-la aos favoritos.
 - ``` <body></body> ``` : Contém todo o conteúdo que você quer mostrar ao público que visita sua página, seja texto, imagens, vídeos, jogos, etc.
