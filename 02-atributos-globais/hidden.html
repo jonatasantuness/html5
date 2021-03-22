@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hidden</title>
+</head>
+<body>
+  <h1>hidden</h1>
+
+  <!--
+    O atributo global hidden é um atributo booleano que indica se um elemento é ou não relevante. Por exemplo, ele pode ser usado para esconder elementos de página que não podem ser usados até que o processo de login seja completo. Os navegadores não renderizarão elementos com o atributo hidden setado.
+  -->
+
+  <!-- Elementos com hidden não devem estar ligados a outros elementos sem hidden. Elementos filhos de um elemento com o atributo hidden ainda estão ativos, ou seja, é possível executar a ação submit de um formulário ou uma tag script pode ser executada se em ambos os casos estes elementos forem filhos de um elemento com o atributo hidden. -->
+
+  <!-- Nota: Mudar o valor da propriedade display no CSS de um elemento com o atributo hidden sobrescreve o comportamento. Por exemplo, elementos com o estilo display: flex; serão mostrados independente da presença do atributo hidden. -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/hidden -->
+
+  <p>Elemento Visível</p>
+ 
+  <p hidden>Elemento Oculto</p>
+</body>
+</html>

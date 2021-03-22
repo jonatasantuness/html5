@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Key</title>
+</head>
+<body>
+  <h1>Access Key</h1>
+
+  <!--
+    Esse atributo global pode ser utilizado em qualquer elemento HTML, normalmente em botões para fazer mapeamento de uma tecla de atalho. O valor do atributo deve consistir em um único caracter imprimível (que inclui caracteres acentuados e outros caracteres que podem ser gerados pelo teclado).
+  -->
+
+  <!--
+    Cada navegador tem um padrão de utilização, no Google Chrome precisamos digitar a tecla Alt antes da tecla de atalho definida pelo accesskey, por exemplo Alt + n
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/accesskey -->
+
+  <button type="button" id="teste" accesskey="n">Aperte Alt + N</button>
+
+  <script>
+    var button = document.getElementById('teste');
+
+    button.addEventListener('click', function () {
+      alert('Teste!');
+    });
+  </script>
+</body>
+</html>

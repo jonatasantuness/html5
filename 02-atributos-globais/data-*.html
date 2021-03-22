@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>data-*</title>
+</head>
+<body>
+  <h1>data-*</h1>
+
+  <!--
+    Os atributos globais data-* são uma classe atributos conhecida como custom data attributes, a qual permite que dados sejam trocados via script entre o HTML e o DOM.
+  -->
+
+  <!-- 
+    O '*' pode ser substituído por qualquer nome, desde que siga a regra de criação de nomes xml com as seguintes restrições:
+
+    - O nome não deve começar com xml.
+    - O nome não deve conter ponto e vírgula.
+    - O nome não deve conter letras maiúsculas.
+  -->
+
+  <!-- 
+    Você pode ler os valores destes atributos usando getAttribute() com o nome html completo, mas a forma padrão provê uma alternativa mais simples: um DOMStringMap pode ser lido através da propriedade dataset.
+  -->
+
+  <!-- 
+    Não armazene conteúdo que deve estar visível e acessível nos atributos data porque tecnologias assistivas podem não acessá-los. Além disso, motores de busca podem não indexar os valores dos atributos data. Apesar do que foi colocado, para metadados customizados associados a elementos, eles são uma ótima solução. 
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/data-* -->
+
+  <article data-author="Jonatas Antunes" data-postdate="23-01-2020">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, odit architecto. Quis non fuga quisquam accusantium distinctio repellat illum illo hic, libero vitae cumque unde ratione beatae voluptatum ullam saepe.</article>
+
+  <script>
+    var article = document.querySelector('article');
+
+    console.log('Exemplo getAttribute:', article.getAttribute('data-author'));
+
+    console.log('dataset\n', article.dataset);
+
+    console.log('Nome do autor: ', article.dataset.author);
+    console.log('Data do post: ', article.dataset.postdate);
+  </script>
+</body>
+</html>

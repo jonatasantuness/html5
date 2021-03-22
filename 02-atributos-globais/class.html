@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class</title>
+  <style>
+    .text-red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Class</h1>
+
+  <!--
+    O atributo global class é uma lista das classes de um elemento, separada por espaços. Classes permitem a CSS e Javascript selecionar e acessar elementos específicos através dos seletores de classe ou funções como o método DOM document.getElementsByClassName.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/class -->
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam consectetur sed libero at expedita, molestiae tempora unde saepe illo sint cum natus nam suscipit reprehenderit itaque magni nemo, ipsam ad.</p>
+
+  <p class="text-red">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut cumque a veritatis dolor alias, culpa necessitatibus sapiente voluptates distinctio reprehenderit ipsam. Delectus doloribus inventore dolor non, ut repudiandae nulla recusandae.</p>
+
+  <button class="myButton">Botão Vermelho</button>
+
+  <script>
+    var myButton = document.getElementsByClassName('myButton');
+
+    myButton[0].addEventListener('click', function () {
+      alert('Elemento selecionado pelo nome da classe');
+    });
+  </script>
+</body>
+</html>

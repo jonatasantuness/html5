@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tabindex</title>
+</head>
+<body>
+  <h1>tabindex</h1>
+
+  <!--
+    O atributo global tabindex indica se um elemento pode receber foco de entrada (se ele é focável), pode especificar também em qual posição ele deve fazer parte da navegação sequencial do teclado (geralmente com a tecla Tab, daí seu nome).
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/tabindex -->
+
+  <p>Clique em qualquerlugar da página fora dos elementos e tente navegar pelos elementos usando TAB.</p>
+
+  <label>Primeiro na ordem de navegação:<input type="text"></label>
+  
+  <div tabindex="0">Navegável devido ao tabindex.</div>
+  
+  <div>Não é navegável devido à ausência de tabindex.</div>
+  
+  <label>Terceiro na ordem de navegação:<input type="text"></label>
+</body>
+</html>

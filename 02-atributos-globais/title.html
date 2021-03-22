@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>title</title>
+</head>
+<body>
+  <h1>title</h1>
+
+  <!--
+    O atributo global title contém textos que representam informações relacionadas ao elemento. É muito importante para semântica e leitores de tela, normalmente essa informação é apresentada ao usuário como uma dica (tooltip), exemplos:
+
+    - link: Título ou descrição do documento vinculado.
+    - Imagem/Video: Descrição ou créditos do autor.
+    - Parágrafo: Nota de rodapé ou um comentário sobre o texto.
+    - Citação: Informação sobre o autor, etc.
+  -->
+
+  <!-- Se este atributo for omitido, significa que o título do antecessor mais próximo desse elemento ainda é relevante (e poderá ser usado como dica para este elemento). Se este atributo estiver difinido como uma string vazia, significa explicitamente que o título do antecessor mais próximo não é relevante (e não deve ser usado como dica para este elemento). -->
+
+  <!-- Semânticas adicionais são anexadas aos atributos title dos elementos <link>, <abbr>, <input> e <menuitem> (en-US). -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/title -->
+
+  <a href="https://www.youtube.com/">Link sem Title</a>
+
+  <br>
+
+  <a title="Youtube - Site de vídeos" href="https://www.youtube.com/">Link com Title</a>
+
+  <form>
+    <input type="text" title="Nome do Usuário" placeholder="usuário">
+  </form>
+</body>
+</html>

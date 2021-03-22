@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dropzone</title>
+  <style>
+    .box {
+      width: 50px;
+      height: 50px;
+    }
+    #box1 {
+      background: red;
+    }
+    #box2 {
+      background: blue;
+    }
+    .alvo {
+      width: 300px;
+      height: 300px;
+      border: 1px dashed #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>dropzone</h1>
+
+  <!--
+    O atributo global dropzone é um atributo que indica quais tipos de conteúdo podem ser soltos em um elemento, usando a API HTML Drag and Drop. Ele pode ter os seguintes valores:
+    - copy: Ao soltar o elemento na dropzone, o mesmo será copiado.
+    - move: Ao soltar o elemento na dropzone, o mesmo será movido para ela.
+    - link: Ao soltar o elemento na dropzone, será criado umlink para os dados arrastados.
+  -->
+
+  <!-- Atenção: Possui pouca compatibilidade com os browsers, então sua utilização não é recomendada, para realizar os efeitos de move/copy normalmente são usados scripts. -->
+
+  <!-- API Drag and Drop: https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dropzone -->
+
+  <p>Arraste as caixas para dentro da dropzone</p>
+
+  <div id="box1" class="box" draggable="true"></div>
+  <div id="box2" class="box" draggable="true"></div>
+
+
+  <div class="alvo" dropzone="copy"></div>
+
+  <script>
+    const buttons = document.querySelectorAll('.box');
+    const dropzone = document.querySelector('[dropzone]');
+
+    buttons.forEach(button => {
+      button.addEventListener('dragstart', event => {
+        event.dataTransfer.setData('Text', event.target.id);
+      });
+    });
+
+    dropzone.addEventListener('dragover', event => {
+      event.preventDefault(); // cancela o comportamento padrsão 
+    });
+
+    dropzone.addEventListener('drop', event => {
+      alert('Evento Drop Realizado!');
+
+      const elementID = event.dataTransfer.getData('Text');
+      const element = document.getElementById(elementID);
+
+      event.target.appendChild(element);
+    });
+
+    /* A API de Drag and Drop só armazena dados em texto e não o elemento em si, então podemos guardar o ID do elemento para criar um seletor depois. */
+
+    /* Primeiro criaremos um evento para quando começarmos a arrastar o elemento, o id do respectivo botão será armazenado */
+
+    /* Teoricamente, ao soltar um elemento draggable true em cima da dropzone, o evento 'drop' deveria ser acionado, porém por padrão os navegadores cancelam a ação. Para realizamor um evento 'drop' customizado, podemos utilizar outro evento auxiliar chamado 'dragover', esse evento é acionado ao passarmos o elemento por cimda da dropzone, e então nesse momento podemos usar o método preventDefault para cancelar o bloqueio do evento 'drop' e conseguir realizar o listener dele.  */
+  </script>
+</body>
+</html>

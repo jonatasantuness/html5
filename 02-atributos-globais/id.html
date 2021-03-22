@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>id</title>
+  <style>
+    #box {
+      cursor: pointer;
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>id</h1>
+
+  <!--
+    O atributo global id define um identificador exclusivo (ID) que deve ser único por todo o documento. Seu objetivo é identificar o elemento ao navegar por âncoras (usando um identificador de fragmento), quando utilizar scripts ou estilizando (com CSS).
+  -->
+
+  <!-- Ao contrário do atributo class, que pdoe ter vários valores separados por espaços, o atributo id dever ter apenas um valor. -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/id -->
+
+  <p>Clique na caixa</p>
+
+  <div id="box"></div>
+
+  <script>
+    var box = document.getElementById('box');
+
+    box.addEventListener('click', function () {
+      alert('Elemento selecionado pelo nome do ID!');
+    });
+  </script>
+</body>
+</html>
