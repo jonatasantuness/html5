@@ -3,14 +3,14 @@ Curso de HTML 5 COMPLETO e com Projetos Práticos para WEB.
 
 ## Sumário
 
-- [Seção 1: Introdução e Configuração do Ambiente](01-introducao)
+- Seção 1: Introdução e Configuração do Ambiente
   - [Introdução](01-introducao/introducao.md)
   - [Estrutura de um arquivo HTML](01-introducao/estrutura-arquivo.html)
   - [Navegadores](01-introducao/navegadores.md)
   - [Estrutura da Página](01-introducao/estrutura-pagina.html)
   - [Seções e estrutura de um documento HTML5](01-introducao/secoes-e-estrutura.md)
 
-- [Seção 2: Atributos Globais](01-introducao)
+- Seção 2: Atributos Globais
   - [Atributos Globais](02-atributos-globais/atributos-globais.md)
   - [Access Key](02-atributos-globais/accesskey.html)
   - [Class](02-atributos-globais/class.html)
@@ -27,3 +27,33 @@ Curso de HTML 5 COMPLETO e com Projetos Práticos para WEB.
   - [tabindex](02-atributos-globais/tabindex.html)
   - [title](02-atributos-globais/title.html)
   - [translate](02-atributos-globais/translate.html)
+
+- Seção 3: Tags
+  - [HTML](03-tags/tag-html.html)
+  - [doctype](03-tags/doctype.html)
+  - [Comentários](03-tags/comentarios.html)
+  - [body](03-tags/body.html)
+  - [head](03-tags/head.html)
+  - [title](03-tags/title.html)
+  - [meta](03-tags/meta.html)
+  - [Cabeçalhos h1–h6](03-tags/cabeçalhos-h1-h6.html)
+  - [style](03-tags/style.html)
+  - [script](03-tags/script.html)
+  - [div](03-tags/div.html)
+  - [span](03-tags/span.html)
+  - [link](03-tags/link.html)
+  - [noscript](03-tags/noscript.html)
+  - [embed](03-tags/embed.html)
+  - [object](03-tags/object.html)
+  - [param](03-tags/param.html)
+  - [base](03-tags/base.html)
+  - [iframe](03-tags/iframe.html)
+  - [a](03-tags/a.html)
+  - [img](03-tags/img.html)
+  - [figure](03-tags/figure.html)
+  - [audio](03-tags/audio.html)
+  - [video](03-tags/video.html)
+  - [source](03-tags/source.html)
+  - [picture](03-tags/picture.html)
+  - [track](03-tags/track.html)
+  - [table](03-tags/table.html)

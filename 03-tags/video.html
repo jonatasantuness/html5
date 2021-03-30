@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>video</title>
+</head>
+<body>
+  <!-- video -->
+
+  <!-- 
+    O elemento <audio> é utilizado para incorporar conteúdo de vídeo em um documento HTML. (Qualquer texto no contéudo da tag será exibido em navegadores que não suportam essa tag).
+  -->
+
+  <!--
+    Suporta os formatos:
+
+    - MP4
+    - WEBN
+    - OGG
+  -->
+
+  <!--
+    Atributos:
+
+    - src: A URL do vídeo a ser incorporado. Isto é opcional; ao invés disso você pode usar o elemento <source> dentro do bloco do vídeo para especificar o vídeo a ser incorporado .
+    - autoplay: Um atributo Booleano; se especificado, o video vai ser executado assim que possível sem precisar de carregar todo o arquivo.
+    - controls: Controle de reprodução do vídeo.
+    - height: Altura do vídeo em pixels de CSS.
+    - width: Largura do vídeo em pixels de CSS.
+    - poster: A URL de imagem de prévia do vídeo.
+    - muted: Se definido, o áudio vai começar mudo.
+    - loop: Um atributo Booleano; se especificado, ao chegar no fim do vídeo, ele voltará automaticamente para o começo.
+    - preload: Define como o vídeo deve ser carregado durante o load da página.
+  -->
+
+  <!--
+    Notas:
+
+    Os navagadores tem evitado habilitar do atributo 'autoplay' para não atrapalhar a experiência dos usuários.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/video -->
+
+  <h1>video</h1>
+
+  <video src="../videos/flower.mp4" width="500" controls muted poster="../img/flowers-poster.jpg"></video>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>figure</title>
+</head>
+<body>
+  <!-- figure -->
+
+  <!-- 
+    Nas mídias tradicionais como livros e revistas, as imagens, gráficos ou fragmentos de código devem vir acompanhados de uma legenda.
+    
+    No HTML5, o elemento <figure> representa uma unidade de conteúdo, foi criado para marcar diagramas, ilustrações, fotos, e fragmentos de código (entre outros conteúdos) que se constituem em uma peça isolada do fluxo principal e pode ser retirada sem alterar o significado do documento.
+  -->
+
+  <!--
+    O elemento <figcaption> é opcional e pode ser posicionado antes ou depois do conteúdo do elemento <figure> para gerar uma legenda. É permitida a inserção de apenas um elemento <figcaption> dentro do elemento <figure>, embora o elemento <figure> em si possa conter outros elementos-filhos (por exemplo: <img> ou <code>).
+  -->
+
+  <!--
+    Notas:
+
+    - A tag <figure> NÃO substitui a tag <img>, normalmente usamos a tag <img> dentro da tag <figure> para atribuirmos a semântica junto à legenda.
+
+    - A pergunta que se deve fazer para decidir o uso entre os elementos <aside> e <figure> é: O conteúdo a ser marcado é essencial para o entendimento da seção? Se o conteúdo não for essencial use <aside>, porém se o conteúdo é essencial, mas sua posição no fluxo do documento é irrelevante então use <figure>.
+
+    - Você não precisa ficar limitado a imagens e exemplos de código para usar o elemento <figure>. Outros conteúdos, tais como, áudio vídeo, gráficos (talvez usando <canvas> ou <svg>), poemas, ou tabelas sobre estatísticas são possíveis candidatos a serem marcados com <figure>.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/figure -->
+  <!-- http://www.maujor.com/blog/2010/04/13/os-elementos-figure-e-figcaption-da-html5/ -->
+
+  <h1>figure</h1>
+
+  <figure>
+    <img src="../img/html5.png" alt="Logo HTML 5">
+    <figcaption>Página sobre HTML 5</figcaption>
+  </figure>
+
+  <figure>
+    <figcaption>Código de Exemplo</figcaption>
+      <pre>
+        function fnExample() {
+          return 'Example'
+        }
+      </pre>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img src="../img/figure-example-1.jpg" alt="Kooaburra">
+    <img src="../img/figure-example-2.jpg" alt="Pelicano na praia">
+    <img src="../img/figure-example-3.jpg" alt="Papagaio">
+    <figcaption>Pássaros Australianos. Da esquerda para direita, Kookburra, Pelicano e Papagaio. Originais por <a href="http://www.flickr.com/photos/rclark/">Richard Clark</a></figcaption>
+  </figure>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>audio</title>
+</head>
+<body>
+  <!-- audio -->
+
+  <!-- 
+    O elemento <audio> é utilizado para embutir conteúdo de som em um documento HTML, seja um arquivo de áudio ou uma transmissão de áudio. (Qualquer texto no contéudo da tag será exibido em navegadores que não suportam essa tag).
+  -->
+
+  <!--
+    Suporta os formatos:
+
+    - MP3
+    - WAV
+    - OGG
+  -->
+
+  <!--
+    Atributos:
+
+    - autoplay: Começa a reproduzir o áudio assim que ele for carregado.
+    - controls: Habilita os controles de reprodução.
+    - loop: O áudio ficará em loop.
+    - muted: Define o volume do áudio como mutado.
+    - preload: Define como o áudio deve ser carregado durante o load da página.
+    - src: Define qual a fonte/link do áudio.
+  -->
+
+  <!-- 
+    Você pode utilizar recursos avançados da API de áudio — que são específicas do Gecko — para gerar e manipular diretamente fluxo de áudio a partir do código JavaScript. 
+  -->
+
+  <!--
+    Notas:
+
+    Os navagadores tem evitado habilitar do atributo 'autoplay' para não atrapalhar a experiência dos usuários.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/audio -->
+  <!-- https://developer.mozilla.org/en-US/docs/Introducing_the_Audio_API_Extension -->
+
+  <h1>audio</h1>
+
+  <audio src="../files/exempla-audio.mp3" controls preload muted loop>
+    O seu navegador não suporta o elemento <code>audio</code>.
+  </audio>
+</body>
+</html>

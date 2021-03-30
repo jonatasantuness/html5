@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>track</title>
+</head>
+<body>
+  <!-- track -->
+
+  <!-- 
+    O elemento <track> é utilizado como filho dos elementos de mídia <audio> e <video>. Ele permite que você especifique faixas de texto temporizadas (ou dados baseados em tempo), por exemplo, para lidar automaticamente com legendas. As faixas são formatadas em WebVTT format (arquivos .vtt)
+  -->
+
+  <!--
+    Atributos:
+
+    - src: A URL da fonte do arquivo.
+    - srclang: Define qual a linguagem dos dados da faixa de texto.
+    - default: Define a faixa em questão é a faixa padrão.
+    - label: Define o rótulo da faixa.
+    - kind: Define o tipo de faixa. (captions, chapters, descriptions, subtitles, metadata, etc).
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/track -->
+
+  <h1>track</h1>
+
+  <video src="../videos/friday.mp4" controls>
+    <track default kind="captions" srclang="en" label="Inglês" src="../files/friday.vtt" kind="subtitles"/>
+    Seu navegador não suporta a tag de vídeo do HTML5.
+  </video>
+</body>
+</html>

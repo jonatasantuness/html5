@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style</title>
+  <style>
+    p {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Style</h1>
+
+  <!-- Style -->
+
+  <!-- 
+    O elemento HTML <style> contém informações de estilo para um documento ou uma parte do documento. As informações de estilo específico estão contidas dentro deste elemento, geralmente no CSS.
+
+    Atributos:
+
+    - type: Define a linguagem de estilo (por padrão 'text/css')
+    - media: Dfine em qual mídia deve ser aplicado este estilo, consulte as mídias em http://dev.w3.org/csswg/css3-mediaqueries.
+    - scoped: Se este atributo está presente, então o estilo aplica-se apenas ao seu elemento pai.
+    - title: Especifica os conjuntos de folhas de estilo alternativa.
+    - disabled: Se definido, desativa (não se aplica) às regras de estilo para a Document que são especificadas no elemento.
+  -->
+
+  <section>
+    <style scoped>
+      p { color: red; }
+    </style>
+    <p>A cor será verde ou vermelha?</p>
+  </section>
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/style -->
+</body>
+</html>

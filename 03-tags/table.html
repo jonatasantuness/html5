@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table</title>
+  <style>
+    table {
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    tbody tr:nth-of-type(even) {
+      background-color: #EEE;
+    }
+
+    tbody tr:nth-of-type(odd) {
+      background-color: #E1E1E1;
+    }
+
+    td, th {
+      padding: 1em;
+    }
+
+    td.real {
+      text-align: right;
+    }
+
+    td.real:before {
+      content: 'R$';
+    }
+
+    tfoot tr {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>table</h1>
+
+  <!-- O elemento HTML <table> representa dados em duas dimensões ou mais. É utilizado para criar tabelas. Todos os atributos de table que existiam antes do HTML5 foram removidos na nova versão então se for necessário alterar aparência, isso deve ser feito pelo CSS. -->
+
+  <!-- 
+    Apenas a tag <table> não cria a tabela, temos que usar também as tags auxiliares <tr> e <td> para criar linhas e células respectivamente. Uma tabela mais completa ainda pode contar com as tags caption, col, colgroup, thead, tbody e tfoot.
+  -->
+
+  <!-- 
+    <tr>
+
+    É utilizada para definir linhas dentro de uma tabela. Deve conter uma ou mais tags <td> ou <th> dentro dela que representam as suas células.
+  -->
+
+  <!-- 
+    <td>
+
+    É utilizada para definir uma célula da tabela (é diferente de criarmos uma coluna, porém se adicionarmos celulas À uma linha <tr> temreos o mesmo comportamento), deve ser usada dentro de uma tag <tr>.
+
+    Atributos:
+
+    - colspan: Define o numero de colunas que esta célula deve ocupar (number).
+    - headers: Define uma ou mais células de cabeçalho relacionadas (ID da celula, pode conter mais de um separado por espaços).
+    - rowspan: Define o numero de linhas que esta célula deve ocupar. (number)
+  -->
+
+  <!-- 
+    <thead>
+
+    É utilizada para agrupar um conjunto de linhas que definem o cabeçalho das colunas da tabela. Deve ser filha da tag table, pode vir após uma tag caption ou colgroup. Os navegadores podem utilizar esta definição para ativar a rolagem do corpo da tabela.
+  -->
+
+  <!-- 
+    <th>
+
+    O elemento HTML <th> deve ser usada dentro de uma <tr> e define uma célula de cabeçalho, ou seja, ela substitui a tag <td> dentro uma tag <thead>.
+
+    Atributos:
+
+    - abbr: Define uma abreviação do conteúdo de célula de cabeçalho. (String).
+    - colspan: Define o numero de colunas que esta célula deve ocupar (number).
+    - rowspan: Define o numero de linhas que esta célula deve ocupar (number).
+    - headers: Define uma ou mais células de cabeçalho relacionadas (ID da celula, pode conter mais de um separado por espaços).
+    - scope: Define se a celula é um cabeçalho de linha, coluna, grupo de linha ou grupo de coluna (row, col, rowgroup, colgroup).
+    - sorted: Define a direção da ordem da coluna (reversed, number, reversed number, number reversed).
+  -->
+
+  <!-- 
+    <tbody>
+
+    É utilizada para agrupar o conteúdo do corpo da tabela, pode ser utilizada em conjunto com as tags <thead> e <tfoot>. Numa mesma tabela podemos ter mais de um <tbody>.
+  -->
+
+  <!-- 
+    <tfoot>
+
+    É utilizada para agrupar o conteúdo do rodapé de uma tabela, essa tag deve ter uma ou mais <tr> dentro dela.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/table -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/th -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot -->
+
+  <table>
+    <thead>
+      <tr>
+        <!-- Neste exemplo estamos definindo explicitamente que essa célula de cabeçalho está relacionada com todas as células dessa coluna. -->
+        <th scope="col">Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <!-- Podemos modificar o tamanho que uma celula ocuparia para por exemplo 2 colunas, assim compensando a falta da célula 'A2'. -->
+        <td colspan="2">A1</td>
+        <td>A3</td>
+      </tr>
+      <tr>
+        <td>B1</td>
+        <!-- Podemos modificar o tamanho que uma celula ocuparia para por exemplo 2 linhas, assim compensando a falta da célula 'C2'. -->
+        <td rowspan="2">B2</td>
+        <td>B3</td>
+      </tr>
+      <tr>
+        <td>C1</td>
+        <td>C3</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Footer 1</td>
+        <td>Footer 2</td>
+        <td>Footer 3</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>

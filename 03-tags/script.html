@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Script</title>
+  <script>
+    console.log(document.querySelector('h1'));
+    alert('Vou impedir o carregamento dos elementos do body!');
+  </script>
+</head>
+<body>
+  <!-- Script -->
+
+  <!-- 
+    O elemento HTML <script> é utilizado para definir a execução de um script do lado do cliente, seja com o código escrito dentro da tag ou referenciado de uma fonte externa através sdo atributo src.
+  -->
+
+  <!--
+    Atributos:
+
+    - src: Define a fonte externa do script.
+    - async: Um atributo booleano indicando que o navegador deve, se possível, executar o script assíncronamente, só tem efeito usado junto com atributo src. Scripts inseridos dinamicamente (usando document.createElement) são executados assincronamente por padrão, então para torná-los uma execução síncrona (ex. executar scripts na ordem que eles foram carregados) atribua async=false.
+    - crossorigin: Permite logs de errona checagem do CORS para sites que usam domínimos diferentes para arquivos estáticos.
+    - defer: Atributo Boleano usado para indicar que o script em src deve ser executado depois que o documento for parseado, porém antes de disparar o evento DOMContentLoaded. Scripts com defer vão impedir que o evento DOMContentLoaded seja disparado até que o script seja carregado e tenha terminado de ser avaliado.
+  -->
+
+  <!--
+    Notas:
+
+    - Todo script inserido numa página, executa de modo síncrono por padrão (a não ser que tenha os atributos async ou defer definidos). Isso significa que quando a tag <script> é encontrada o browser não renderiza mais nada enquanto esse script não for carregado e executado.
+    - Colocar um <script> no head garante que ele seja executado antes de qualquer elemento ser renderizado no body. Isso significa que ele garantidamente estará presente quando a página for "montada" porém a desvantagem é que o usuário poderá ver uma página em branco até que o script termine de executar.
+    - Colocar um <script> no final do body, por outro lado, permite que o conteúdo antes dele apareça para o usuário sem ter de esperar sua execução, porém devemos nos atentar à lógica aplicada em elementos que ainda não foram carregados.
+    - A recomendação mais comum é inserir o <script> antes do fechamento do body, por questão da performance principalmente.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/script -->
+
+  <h1>Script</h1>
+
+  <script src="script.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      alert('Página Carregada!');
+    });
+  </script>
+</body>
+</html>

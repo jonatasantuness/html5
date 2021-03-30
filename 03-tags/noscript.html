@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>noscript</title>
+  <noscript>
+    <style>
+      .alert {
+        color: red;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    </style>
+  </noscript>
+</head>
+<body>
+  <!-- noscript -->
+
+  <!-- 
+    O elemento <noscript> define uma seção de html a ser inserida se um tipo de script não é suportado pela página ou se o script está desativado no navegador.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/noscript -->
+
+  <h1>noscript</h1>
+
+  <p>Desabilite o javascript dessa página para visualizar o alerta.</p>
+
+  <noscript>
+    <p class="alert">Atenção! seu javascript esta desabilitado</p>
+  </noscript>
+
+  <script>
+    alert('Ola Mundo!');
+  </script>
+</body>
+</html>

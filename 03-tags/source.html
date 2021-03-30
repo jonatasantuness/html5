@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>source</title>
+</head>
+<body>
+  <!-- source -->
+
+  <!-- 
+    O elemento <source> é utilizado para definir uma fonte de mídia, pode ser utilizada em conjunto com as tags <audio>, <video> e <picture>. É normalmente usado para disponibilizar diferentes tipos, fonte e opções para um elemento de mídia.
+  -->
+
+  <!--
+    Atributos:
+
+    - src: A URL que define a fonte externa do source.
+    - srcset: Define fontes alternativas para situações diferentes, por exemplo, atribui uma fonte de uma imagem diferente para resoluções menores.
+    - media: Define o tipo da mídia.
+    - sizes: Define tamanhos diferentes.
+    - type: Define o tipo de mídia (MIME).
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Source -->
+
+  <h1>source</h1>
+
+  <section>
+    <!-- O navegador escolherá o arquivo mais conveniente em source -->
+    <audio controls>
+      <source src="../files/example-audio.ogg" type="audio/ogg">
+      <source src="../files/exempla-audio.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+
+  <picture>
+    <!-- O navegador escolherá a imagem de acordo com a resolução -->
+    <source media="(min-width: 1200px)" srcset="../img/saturn-big.png">
+    <source media="(max-width: 1200px)" srcset="../img/saturn-small.jpg">
+    <img src="../img/saturn-big.png" alt="Saturno">
+  </picture>
+</body>
+</html>

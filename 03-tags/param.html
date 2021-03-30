@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Param</title>
+</head>
+<body>
+  <!-- Param -->
+
+  <!-- 
+    O elemento <param> define parâmetros para um elemento <object>. Os valores dos parâmetros dependem dos recursos que cada tipo de objeto pode executar.
+  -->
+
+  <!--
+    Atributos
+
+    - name: Nome do parâmetro.
+    - value: Valor do parâmetro.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param -->
+
+  <h1>Param</h1>
+
+  <!-- Neste exemplo vamos utilizar um <param> depreciado só para ilustrar, vamos supor que o PDF precise ser aberto na página 3, podemos inserir um param para definir isso (recentemente essa feature foi alterada para funcionar inserindo '#page=3' no final da URL em data). -->
+
+  <object data="../files/tag-object.pdf#page=3" type="application/pdf" width="800" height="600">
+    <param name="page" value="3">
+  </object>
+</body>
+</html>

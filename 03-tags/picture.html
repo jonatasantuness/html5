@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>picture</title>
+</head>
+<body>
+  <!-- picture -->
+
+  <!-- 
+    O elemento HTML <picture> é um container usado para especificar múltiplos elementos <source> para um elemento específico <img> contido nele.
+
+    O navegador irá escolher a imagem mais adequada de acordo com o layout atual da página ou caracteristicas do dispositivo em que será exibido (exemplo, um dispositivo normal ou um hiDPI).
+
+    Se não houver correspondência entre os elementos <source>, o arquivo especificado pelo elemento <img> será selecionado e a imagem selecionada é então exibida no espaço ocupado pelo elemento <img>.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/picture -->
+
+  <h1>picture</h1>
+
+  <!-- Exemplo 1: Uso com atributo media -->
+
+  <section>
+    <picture>
+      <!-- O atributo media permite você especificar uma media query que o navegador irá avaliar para selecionar um elemento <source>. Se a media query retornar falso, o elemento <source> é ignorado. -->
+      <source media="(min-width: 1200px)" srcset="../img/saturn-big.png">
+      <source media="(max-width: 1200px)" srcset="../img/saturn-small.jpg">
+      <img src="../img/saturn-big.png" alt="Saturno">
+    </picture>
+  </section>
+
+  <!-- Exemplo 2: Uso com atributo type -->
+
+  <section>
+    <picture>
+      <!-- O atributo type permite especificar um tipo MIME para os recursos fornecidos no atributo srcset. Se o navegador não suportar o tipo especificado, o elemento <source> é ignorado. -->
+      <source srcset="../img/html5.svg" type="image/svg+xml">
+      <img src="../img/html5.png" alt="Logo HTML 5" width="132">
+    </picture>
+  </section>
+</body>
+</html>
