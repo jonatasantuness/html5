@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>header</title>
+  <style>
+    body > header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    body > header ul {
+      display: flex;
+      list-style: none;
+    }
+
+    body > header ul li {
+      margin: 0 10px;
+    }
+
+    article {
+      background-color: #eee;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <!-- header -->
+
+  <!-- 
+    O elemento HTML <header> representa um cabeçalho de introdução do documento ou um cabeçalho relativo ao seu contexto. Pode conter elementos de cabeçalho além de outros elementos como logo, formulários de busca, etc.
+  -->
+
+  <!-- 
+    Notas:
+
+    - O <header> pode ser utilizado, além do cabeçalho principal, em outros elementos como <section>, <article>, etc.
+
+    - O elemento <header> não é separador de conteúdo (sectioning content), portanto, não introduz uma nova seção.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/header -->
+
+  <header>
+    <img src="../img/html5.svg" width="32" alt="Logo da Exemplo">
+    <h1>header</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Sobre</a>
+        </li>
+        <li>
+          <a href="#">Contato</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <article>
+      <header>
+        <h1>Titulo do Artigo</h1>
+        <h2>Subtitulo do Artigo</h1>
+      </header>
+
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione, porro eum excepturi corrupti beatae quidem illo vero deserunt saepe, totam veritatis quod architecto officia atque ipsum deleniti. Corporis, aliquid quas.</p>
+    </article>
+  </section>
+</body>
+</html>

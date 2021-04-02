@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>section</title>
+</head>
+<body>
+  <!-- section -->
+
+  <!-- 
+    O elemento HTML <section> representa uma seção genérica contida em um documento HTML, geralmente acompanhada com um título. Ao iniciar uma nova seção em um documento atente-se a semântica da mesma, por exemplo, um menu de navegação deve estar dentro um elemento <nav>, mas uma lista de resultados de pesquisa ou a exibição de um mapa não possuem elementos específicos, e podem ser colocados dentro de uma <section>.
+  -->
+
+  <!-- 
+    Pode ser utilizado para a grupar de forma lógica o conteúdo, separando informações em áreas diferentes, cada uma com seu titulo. 
+  -->
+
+  <!-- 
+    Diferenças entre <article> e <section>
+
+    O elemento <article> é uma espécie de <section> especializada, ele possui um valor semântico mais específico. O <section> é somente um bloco de conteúdos relacionados enquanto <div> ẃ apenas um bloco de conteúdo, o atributo pubdate por exemplo não se aplica à <section>. Para decidir questione:
+
+    - O conteúdo faz sentido se inserido em um leitor de feed? Se a resposta for sim, use <article>
+    - O conteúdo pertence á um grupo relacionado à outro elemento pai? Se a resposta for sim, use <section>.
+    - Existe relacionamento do conteúdo com a semântica? Se a resposta for não, use <div>.
+  -->
+
+  <!-- 
+    Notas:
+
+    - Cada <section> deve ser identificado, geralmente incluindo um cabeçalho <h1>-<h6> como um filho.
+
+    - Não use o elemento <section> como um container genérico; para isso que a <div> serve, especialmente quando a seção é apenas com propósito de estilização. Uma regra de ouro é: "usar quando uma seção deve aparecer logicamente na estrutura de um documento".
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/section -->
+
+  <main>
+    <article id="esportes">
+      <h1>Esportes no Brasil</h1>
+      <h2>Um pouco sobre o que está acontecendo no mundo dos esportes</h2>
+
+      <section id="futebol">
+       <h1>Futebol</h1>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, corporis! Ratione placeat dolore, officia magni quam molestias necessitatibus perferendis. Qui aperiam optio quaerat officiis esse ex, provident totam reiciendis perferendis.</p>
+      </section>
+
+      <section id="basquete">
+       <h1>Basquete</h1>
+       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci doloribus dolores voluptatibus nulla ex pariatur impedit! Sunt aliquid fugit ut repudiandae, suscipit nemo! Minus quia explicabo eligendi quasi sit blanditiis!</p>
+      </section>
+     </article>
+  </main>
+</body>
+</html>

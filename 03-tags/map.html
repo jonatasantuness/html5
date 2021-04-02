@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map</title>
+</head>
+<body>
+  <!-- map -->
+
+  <!-- 
+    O elemento HTML <map> é usado com os elementos <area> para definir um mapa de imagem (a área clicável do link). A tag <map> define as áreas clicáveis através de tags <area>.
+  -->
+
+  <!-- 
+    Atributos:
+
+    - name: Um nome pelo qual o mapa pode ser refenciado, esse atributo é obrigatório para se relacionar com a imagem e não pode ser vazio e sem caracteres de espaço. O valor de name não pode corresponder a um valor do atributo name de outro elemento no mesmo documento.
+  -->
+
+  <!-- 
+    O HTML <area> define uma região de mapeamento em uma imagem, e, opcionalmente, pode-se associa-la com um link de hipertexto. Este elemento é usado somente dentro de um <map>. 
+  -->
+
+  <!-- 
+    Atributos:
+
+    - Define um texto alternativo para area da imagem mapeada.
+    - coords: Definição da região mapeada através dos eixos x,y ou raio.
+    - download: usado para forçar o download do link.
+    - href: Define o endereço do link de destino.
+    - hreflang: Define a linguagem do link de destino.
+    - media: Define qual mídia ou dispositivo do link de destino.
+    - rel: Define qual a relação do documento atual e do destino.
+    - shape: Define qual a forma da área (default, rect, circle, poly)
+    - target: Define onde o link deverá ser aberto.
+    - type: O tipo de mídia (MIME) do link de destino.
+  -->
+
+  <!-- 
+    Coordenadas de <area>
+
+    Dependendo da forma definida no atributo coords, os valores que podem ser recebidos podem variar. Em HTML4, os valores são números de pixels ou porcentagens, se um sinal de porcentagem (%) é anexado; em HTML5, os valores são números de pixels CSS. Segue o padrão:
+
+    - rect: x1, y1, x2, y2
+    - circle: x1, y1, raio
+    - poly: x1, y1, x2, y2, ... , xn, yn
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/map -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/area -->
+
+  <h1>map</h1>
+
+  <img src="../img/coords.png" alt="coordenadas">
+
+  <section>
+    <img src="../img/pokemon-starters.jpg" alt="pokemons iniciais" usemap="#pokemons">
+  </section>
+
+  <!-- Neste exemplo, vamos mapear a area de clique da imagem para corresponder a cada pokemon e levá-lo ao link sobre o mesmo. -->
+  <map name="pokemons">
+    <area shape="rect" coords="0,0,320,485" href="https://www.pokemon.com/br/pokedex/bulbasaur" alt="Bulbassaur" />
+    <area shape="rect" coords="320,0,640,485" href="https://www.pokemon.com/br/pokedex/charmander" alt="Charmander" />
+    <area shape="rect" coords="640,0,970,485" href="https://www.pokemon.com/br/pokedex/squirtle" alt="Squirtle" />
+  </map>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aside</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    header ul {
+      display: flex;
+      list-style: none;
+    }
+
+    header ul li {
+      margin: 0 10px;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    main {
+      flex: 0 1 60%;
+      background-color: #eee;
+      padding: 1em;
+    }
+
+    aside {
+      flex: 0 1 35%;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #e2e2e2;
+    }
+  </style>
+</head>
+<body>
+  <!-- aside -->
+
+  <!-- 
+    O elemento HTML <aside> representa um conteúdo que é tangencialmente relacionado ao conteúdo do seu entorno, que poderia ser considerado separado do conteúdo principal.
+  -->
+
+  <!-- 
+    Normalmente aparece ao lado de um artigo ou ao lado do conteúdo principal da página e pode conter assuntos relacionados, conteúdo publicitário, avisos, a biografia do autor, ou, em aplicações web, informações de perfil ou links de blogs relacionados. 
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/section -->
+
+  <header>
+    <img src="../img/html5.svg" width="32" alt="Logo da Exemplo">
+    <h1>header</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Sobre</a>
+        </li>
+        <li>
+          <a href="#">Contato</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <main>
+      <h1>Curso de HTML 5</h1>
+      <h2>Tudo sobre versão mais recente do HTML.</h2>
+  
+      <article>
+        <h1>Artigo de Exemplo</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate unde ducimus, esse quaerat mollitia qui officiis voluptatibus soluta nobis quasi? Voluptas quidem delectus eveniet laborum provident dolore voluptate animi debitis.</p>
+      </article>
+    </main>
+  
+    <aside>
+      <h1>Cabeçalho do Aside</h1>
+  
+      <section id="author">
+        <h2>Sobre o autor</h2>
+  
+        <img src="../img/user.png" alt="Autor do documento">
+  
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis ullam rem accusantium doloribus deleniti dolor eveniet, velit, commodi adipisci, mollitia similique saepe explicabo dignissimos aut illum tempora quas tenetur autem!</p>
+      </section>
+  
+      <section id="publicidade">
+        <img src="../img/hcode.png" alt="Propaganda da Hcode">
+      </section>
+    </aside>
+  </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>col</title>
+  <style>
+    table {
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    td, th {
+      padding: 1em;
+      border: 1px solid #ccc;
+    }
+
+    tfoot tr {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .blue {
+      background-color: deepskyblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>col</h1>
+
+  <!-- col -->
+
+  <!-- 
+    O elemento HTML <col> define uma tabela contendo colunas e sendo utilizada para definições semanticas em todas as colunas comuns. É normalmente encontrada dentro do elemento <colgroup>.
+  -->
+
+  <!-- 
+    Atributos:
+
+    - span: Define o numero de colunas que esse grupo deve abranger (number).
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/col -->
+
+  <table>
+    <!-- Podemos utilizar o col para definir um padrão de estilização para cada coluna. -->
+    <colgroup>
+      <col span="2" class="red">
+      <!-- Neste caso poderia omitir o atributo span, por que só sobrou 1 coluna mesmo. -->
+      <col span="1" class="blue">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>A1</td>
+        <td>B1</td>
+        <td>C1</td>
+      </tr>
+      <tr>
+        <td>A2</td>
+        <td>B2</td>
+        <td>C2</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <td colspan="3">Footer</td>
+    </tfoot>
+  </table>
+</body>
+</html>

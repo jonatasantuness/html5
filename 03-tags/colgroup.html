@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>colgroup</title>
+  <style>
+    table {
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    td, th {
+      padding: 1em;
+      border: 1px solid #ccc;
+    }
+
+    tfoot tr {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .red {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>colgroup</h1>
+
+  <!-- colgroup -->
+
+  <!-- 
+    O elemento HTML <colgroup> define um grupo de colunas em uma tabela. é usada para definir propriedades nas colunas.
+  -->
+
+  <!-- 
+    Atributos:
+
+    - span: Define o numero de colunas que esse grupo deve abranger (number).
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup -->
+
+  <table>
+    <!-- Neste exemplo vamos definir que as duas primeiras colunas (A e B) receberão a classe 'red'. -->
+    <colgroup span="2" class="red"></colgroup>
+    <thead>
+      <tr>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>A1</td>
+        <td>B1</td>
+        <td>C1</td>
+      </tr>
+      <tr>
+        <td>A2</td>
+        <td>B2</td>
+        <td>C2</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <td colspan="3">Footer</td>
+    </tfoot>
+  </table>
+</body>
+</html>

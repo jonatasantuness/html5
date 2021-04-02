@@ -81,8 +81,14 @@
     - colspan: Define o numero de colunas que esta célula deve ocupar (number).
     - rowspan: Define o numero de linhas que esta célula deve ocupar (number).
     - headers: Define uma ou mais células de cabeçalho relacionadas (ID da celula, pode conter mais de um separado por espaços).
-    - scope: Define se a celula é um cabeçalho de linha, coluna, grupo de linha ou grupo de coluna (row, col, rowgroup, colgroup).
+    - scope: Define se a celula é um cabeçalho de linha, coluna, grupo de linha ou grupo de coluna, não possui efeitos visuais e sim semântico (row, col, rowgroup, colgroup).
     - sorted: Define a direção da ordem da coluna (reversed, number, reversed number, number reversed).
+  -->
+
+  <!-- 
+    <caption>
+
+    Representa o título ou legenda de uma tabela. Embora ele seja sempre o primeiro filho de um <table>, seu estilo, usando CSS pode colocar ele em qualquer lugar relativo a tabela.
   -->
 
   <!-- 
@@ -102,10 +108,12 @@
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td -->
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead -->
   <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/th -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/caption -->
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody -->
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot -->
 
   <table>
+    <caption>Tabela de Exemplo</caption>
     <thead>
       <tr>
         <!-- Neste exemplo estamos definindo explicitamente que essa célula de cabeçalho está relacionada com todas as células dessa coluna. -->

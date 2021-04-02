@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>address</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    header ul {
+      display: flex;
+      list-style: none;
+    }
+
+    header ul li {
+      margin: 0 10px;
+    }
+
+    article {
+      background-color: #eee;
+      padding: 1em;
+      margin-bottom: 30px;
+    }
+
+    article > footer {
+      background-color: #fff;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <!-- address -->
+
+  <!-- 
+    O elemento HTML <address> fornece informações de contato para seu ancestral <article> ou <body> mais próximo; no segundo caso, ele se aplica ao documento inteiro.
+  -->
+
+  <!-- 
+    Pode incluir qualquer tipo de informação de contato necessária, como endereço físico, URL, email, telefone, mídia social, coordenadas geográficas, por aí vai.
+  -->
+
+  <!-- 
+    Deve incluir o nome da pessoa, grupo, ou organização para qual as informações de contato se referem. 
+  -->
+
+  <!-- 
+    O <address> pode ser usado em uma variedade de contextos, como fornecer informação de contato de uma empresa no header ou footer da página, ou indicar o autor de um artigo dentro do <article>.
+  -->
+
+  <!--
+    Notas:
+
+    - Para representar um endereço que não tenha a ver com o contexto do conteúdo,pode-se utilizar uma tag <p> mesmo.
+    - Não coloque informações no <address> além da informações de contato, a data de publicação do conteúdo por exemplo deve ser atribuida no elemento <time> e não no <address>.
+    - Tipicamente um elemento <address> pode ser posicionado dentro do elemento <footer> da seção atual, se houver um.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/address -->
+
+  <header>
+    <img src="../img/html5.svg" width="32" alt="Logo da Exemplo">
+    <h1>Curso de HTML 5</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Sobre</a>
+        </li>
+        <li>
+          <a href="#">Contato</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <header>
+        <h1>Exemplo de Address</h1>
+        <p><time pubdate datetime="2021-03-30T13:00-13:05"></time></p>
+      </header>
+
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, praesentium ex quas alias molestias, animi omnis beatae earum a voluptates corporis. Deleniti inventore sint reprehenderit? Harum repudiandae alias consequuntur at!</p>
+
+      <footer>
+        <address>
+          Escrito por <a href="mailto:mail@example.com">Jonatas Antunes</a>.<br>
+          Nos visite em:<br>
+          teste.com.br<br>
+          Vila Mariana, São Paulo<br>
+          Brasil
+        </address> 
+      </footer>
+    </article>
+  </main>
+
+  <footer>
+    <!-- Na tag <address> é normal utilizarmos quebras de linha com <br> ao invés de usar parágrafos, afinal já estamos colocando a informação do endereço como um 'todo'. -->
+    <address>
+      Voce pode contatar o autor em <a href="#">www.somedomain.com</a>.<br>
+      Se encontrar qualquer bug, por favor <a href="mailto:webmaster@somedomain.com">contate o administrador do site</a>.<br>
+      Você tambem pode querer nos visitar:<br>
+      Mozilla Foundation<br>
+      1981 Landings Drive<br>
+      Building K<br>
+      Mountain View, CA 94043-0801<br>
+      USA
+    </address>
+  </footer>
+</body>
+</html>

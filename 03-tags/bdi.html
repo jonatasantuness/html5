@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bdi</title>
+</head>
+<body>
+  <!-- bdi -->
+
+  <!-- 
+    O elemento HTML <bdi> (elemento de isolamento de Bi-direcional) é usado para definir parte de um texto que pode ser formatado em uma direção diferente do padrão. Este elemento é útil ao incorporar o texto com uma direção desconhecida, de um banco de dados por exemplo, no interior do texto com uma direção fixa.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/bdi -->
+
+  <h1>bdi</h1>
+
+  <!-- Neste exemplo, vamos supor que recuperamos essa lista de nomes de um banco de dados, e nessa lista pode ter nomes árabes (que são lidos da direita para esquerda), neste caso temos que nos prevenir em todos os itens da lista. -->
+  <ol>
+    <li>
+      <bdi>Bruna Ferreira</bdi>
+    </li>
+    <li>
+      <bdi>Diego Souza</bdi>
+    </li>
+    <li>
+      <bdi>Harry Potter</bdi>
+    </li>
+    <li>
+      <bdi>محمد</bdi>
+    </li>
+  </ol>
+
+  <!-- Outro exemplo, mesmo estando em "Left to Right" a tag <bdi> formatará a palavra dentro dela da forma correta: -->
+  <p dir="ltr">A palavra arábica <bdi>قمر</bdi> é automaticamente voltada da direita e significa "Lua".</p>
+</body>
+</html>

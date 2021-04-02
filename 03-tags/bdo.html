@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bdo</title>
+</head>
+<body>
+  <!-- bdo -->
+
+  <!-- 
+    O elemento HTML <bdo> (bidirectional override) é usado para substituir a direcionalidade atual do texto. Ao contrário da tag <bdi>, a tag <bdo> é utilizada quando sabemos a direção do texto, e neste caso devemos indicar no atributo dir qual a direção será usada (ltr, rtl).
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/bdo -->
+
+  <h1>bdo</h1>
+
+  <p dir="ltr">A palavra arábica <bdo dir="rtl">قمر</bdo> é automaticamente voltada da direita e significa "Lua".</p>
+
+  <!-- Por padrão nossa linguagem utiliza o ltr, porém vamos forçar neste exemplo um trecho de texto em rtl. -->
+  <p>Este texto ficará da esquerda para a direita.</p>
+  <p><bdo dir="rtl">Este texto ficará da direita para a esquerda.</bdo></p>
+</body>
+</html>

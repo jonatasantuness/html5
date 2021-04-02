@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nav</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    header ul {
+      display: flex;
+      list-style: none;
+    }
+
+    header ul li {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- nav -->
+
+  <!-- 
+    O elemento HTML <nav> representa uma seção de uma página que aponta para outras páginas ou para outras áreas da página, ou seja, uma seção com links de navegação.
+  -->
+
+  <!--
+    Notas:
+
+    - Nem todos os links devem estar dentro de <nav>, o qual é destinado apenas para grupos importantes de links de navegação; normalmente o elemento <footer> contém uma lista de links que não precisam estar no <nav>.
+    - Uma página pode ter vários elementos <nav>, por exemplo, um para navegação no site e outro para navegação dentro da página.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/nav -->
+
+  <header>
+    <img src="../img/html5.svg" width="32" alt="Logo da Exemplo">
+    <h1>Curso de HTML 5</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Sobre</a>
+        </li>
+        <li>
+          <a href="#">Contato</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>

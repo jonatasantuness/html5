@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ol</title>
+</head>
+<body>
+  <!-- ol -->
+
+  <!-- 
+    O elemento HTML <ol> (Lista Ordenada) representa uma lista de itens ordenados, ou seja, os items da lista precisam seguir uma ordem e são exibidos com algum marcador de contagem que os precede, que podem ser numerais, letras, algarismos romanos, ou símbolos simples.
+  -->
+
+  <!-- 
+    Os itens em uma lista ordenada são exibidos com um marcador que pode ter várias formas. O tipo de marcador não é definido na descrição HTML da página, mas no CSS associado, utilizando a propriedade list-style-type.
+  -->
+
+  <!-- 
+    Não há nenhuma limitação para a profundidade, então as lista podem ser aninhadas. Deve ser utilizado em conjunto com a tag de item de lista <li>.
+  -->
+
+  <!-- 
+    Para não confundir seu uso com a tag de lista ordenada <ol>, verifique se os itens da lista podem mudar de posição sem perder o significado, se a ordem não for relevante, então use <ul>.
+  -->
+
+  <!-- 
+    Atributos:
+
+    - reversed: Define a ordem da lista como decrescente
+    - start: Define qual o valor inicial da lista. (number)
+    - type:  Define o tipo de simbolo usado nos items da lista. (1, A, a, I, i)
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/ol -->
+
+  <h1>ol</h1>
+
+  <h2>Lista de Produtos mais caros</h2>
+
+  <!-- O marcador númerico representado por '1' é o padrão -->
+  <ol id="maior-preco" type="1">
+    <li>Iphone XR - R$ 4500,00</li>
+    <li>Samsumg Galaxy X - R$ 4000,00</li>
+    <li>Xioami Mi 10 - R$ 3000,00</li>
+    <li>Motorola Z - R$ 2000,00</li>
+  </ol>
+
+  <ol id="menor-preco" reversed>
+    <li>Motorola Z - R$ 2000,00</li>
+    <li>Xioami Mi 10 - R$ 3000,00</li>
+    <li>Samsumg Galaxy X - R$ 4000,00</li>
+    <li>Iphone XR - R$ 4500,00</li>   
+  </ol>
+
+  <!-- Podemos começar a contagem a partir de um valor específico, por exemplo, supondo que no campeonato brasileiro de futebol, queremos listar apenas os times que se classificaram para a Copa Sul Americana (que corresponde do quinto ao oitavo lugar). -->
+  <ol id="sulamericana" start="5">
+    <li>Corinthians</li>
+    <li>Santos</li>
+    <li>Fluminense</li>
+    <li>Bahia</li>
+  </ol>
+
+  <ol type="a">
+    <li>item com marcador minúsculo 1</li>
+    <li>item com marcador minúsculo 2</li>
+    <li>item com marcador minúsculo 3</li>
+  </ol>
+
+  <ol type="A">
+    <li>item com marcador maiusculo 1</li>
+    <li>item com marcador maiusculo 2</li>
+    <li>item com marcador maiusculo 3</li>
+  </ol>
+
+  <ol type="i">
+    <li>item com marcador minúsculo romano 1</li>
+    <li>item com marcador minúsculo romano 2</li>
+    <li>item com marcador minúsculo romano 3</li>
+  </ol>
+
+  <ol type="I">
+    <li>item com marcador maiusculo romano 1</li>
+    <li>item com marcador maiusculo romano 2</li>
+    <li>item com marcador maiusculo romano 3</li>
+  </ol>
+</body>
+</html>

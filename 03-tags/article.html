@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>article</title>
+  <style>
+    main {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main > article {
+      background-color: #eee;
+      padding: 1em;
+    }
+
+    .comments {
+      background-color: #fff;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <!-- article -->
+
+  <!-- 
+    O Elemento <article> representa um conteúdo independente em um documento ou que é destinado a ser distribuido de forma independente ou reutilizável, por exemplo, em feeds. A tag <article> pode ser colocada em qualquer parte do site que ainda vai fazer sentido sozinha.
+  -->
+
+  <!-- 
+    Pode ser o post de um fórum, um artigo de revista ou jornal, um post de um blog, um comentário enviado por um usuário, um gadget ou widget interativos, ou qualquer outra forma de conteúdo independente. Normalmente o <article> possui um titulo.
+  -->
+
+  <!-- 
+    Diferenças entre <article> e <section>
+
+    O elemento <article> é uma espécie de <section> especializada, ele possui um valor semântico mais específico. O <section> é somente um bloco de conteúdos relacionados enquanto <div> ẃ apenas um bloco de conteúdo, o atributo pubdate por exemplo não se aplica à <section>. Para decidir questione:
+
+    - O conteúdo faz sentido se inserido em um leitor de feed? Se a resposta for sim, use <article>
+    - O conteúdo pertence á um grupo relacionado à outro elemento pai? Se a resposta for sim, use <section>.
+    - Existe relacionamento do conteúdo com a semântica? Se a resposta for não, use <div>.
+  -->
+
+  <!-- 
+    Notas:
+
+    - Quando um elemento <article> está aninhado com outro <article>, o elemento interior representa um artigo relacionado com o elemento exterior. Por exemplo, os comentários do post de um blog podem ser elementos <article> aninhados em <article> representando o post do blog.
+    
+    - Informações sobre o autor de um elemento <article> podem ser fornecidas através do elemento <address> ,mas ele não se aplica aos elementos <article> aninhados.
+
+    - A data e hora de publicação de um elemento <article> pode ser descrita usando o atributo pubdate de um elemento <time>.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/main -->
+
+  <main>
+    <h1>HTML 5</h1>
+    <p>O HTML 5 é a vserão mais recente do HTML.</p>
+
+    <article>
+      <header>
+        <h1>Entendendo o elemento Article</h1>
+        <p>Publicado em <time pubdate datetime="2021-03-01">01 de Março de 2021</time></p>
+      </header>
+      
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur suscipit ratione adipisci asperiores. Veniam, dolores pariatur quisquam doloremque libero, ex perspiciatis officiis ipsum dolorum, quaerat voluptatem! Labore impedit eos illum!</p>
+
+      <section class="comments">
+        <h2>Comentários de usuários:</h2>
+
+        <article>
+          <header>
+            <h3>Postado por: Roberto Rivellino</h3>
+            <p><time pubdate datetime="2021-03-27T19:10">27 de Março de 2021 - 09:10</time></p>
+          </header>
+          <p>Eu sou um comentário de exemplo de algum usuário aleatório.</p>
+        </article>
+
+        <article>
+          <header>
+            <h3>Postado por: Sócrates</h3>
+            <p><time pubdate datetime="2021-03-30T08:00">30 de Março de 2021 - 08:00</time></p>
+          </header>
+          <p>Eu sou outro comentário de exemplo de algum usuário aleatório.</p>
+        </article>
+      </section>
+      
+      <footer>
+        <small>© Todos os direitos reservados.</small>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
