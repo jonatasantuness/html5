@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>time</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serifs;
+    }
+  </style>
+</head>
+<body>
+  <!-- time -->
+
+  <!-- 
+    O elemento HTML <time> representa o tempo tanto no formato de 24 horas ou como uma data precisa no calendário Gregoriano (com informações opcionais de tempo e fuso horário).
+  -->
+
+  <!-- 
+    Notas:
+
+    - Este elemento não é adequado por exemplo, quando uma data específica não pode ser calculada, e nem deveria ser utilizado em datas anteriores ao calendário Gregoriano (devido as complicações com os cálculos dessas datas).
+
+    - Devido a problemas para representar datas não precisas como registros históricos, agora é possível definir datas como “Novembro 2017” dessa forma:
+
+      <time>2017-01</time>
+
+    - O HTML usa uma variação do padrão ISO 8601 para strings de data e hora.
+  -->
+
+  <!-- 
+    Atributos:
+
+    - pubdate: Este atributo booleano especifica que a data e hora fornecidas pelo elemento é a data de publicação de um documento. O documento ao qual se aplica é o elemento de artigo ancestral mais próximo ou o documento como um todo (se não houver elemento de artigo ancestral).
+
+    - datetime: É um atributo opcional e seu valor deve ser uma representação do conteúdo do elemento em um formato legível por máquina. Datas como "Novembro 2017" mencionadas na seção anterior, podem funcionar em alguns países/culturas e em outros não, por isso a importância da formatação.
+    
+    O atributo datetime contém as informações em um formato legível para uma máquina, o que nos permite escrever a parte do conteúdo do elemento da maneira que nós quisermos.
+
+    Ou seja, o valor de datetime do elemento <time> será o valor do atributo datetime caso o mesmo tenha sido definido, senão, datetime será implicitamente o valor de texto inserido na tag <time>.
+
+    ATENÇÃO! Se o atributo datetime não for especificado, o conteúdo de texto da tag <time> DEVE estar em um dos formatos de data/hora válidos descritos nos exemplos abaixo.
+  -->
+  
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/time -->
+  <!-- https://tableless.com.br/um-guia-para-o-elemento-time-html5/ -->
+  <!-- https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element -->
+  <!-- https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators -->
+
+  <h1>time</h1>
+
+  <h2>Sintaxes válidas de datetime</h2>
+
+  <!-- Mês -->
+  <p><time>2021-03</time></p>
+
+  <!-- String de data -->
+  <p><time>2021-03-15</time></p>
+
+  <!-- Ano 1 -->
+  <p><time>0001</time></p>
+
+  <!-- Data sem ano -->
+  <p><time>06-23</time></p>
+
+  <!-- String de tempo -->
+  <p><time>12:30</time></p>
+
+  <!-- String de tempo com segundos -->
+  <p><time>12:30:10</time></p>
+
+  <!-- 
+    String de tempo com segundos
+    (segundos igual à 0 ou menor que 0.59, até 3 casas)
+  -->
+  <p><time>12:30:10.929</time></p>
+
+  <!-- Data local e String de Tempo -->
+  <p><time>1992-06-23T23:30</time></p>
+
+  <p><time>1992-06-23T23:30:15.929</time></p>
+
+  <p><time>1992-06-23 23:30</time></p>
+  
+  <p><time>1992-06-23 23:30:15.929</time></p>
+
+  <!--
+    String de Data e Hora global (Fuso Horário)
+
+    As tags <time> que possuem data porém não possuem fuso horário são úteis para eventos que ocorrem no mesmo horário específico em cada fuso horário, por exemplo a celebração do ano novo ocorrerá em '2022-01-01 00:00' em cada fuso horário e não no mesmo momento preciso em todos os fusos horários.
+
+    Para eventos que ocorrem ao mesmo tempo em todos os fusos horários, por exemplo, uma reunião de videoconferência, uma String de Data e Hora global válida será mais adequada.
+
+    Existem 2 referências para Fusos Horários, o GMT (Greenwich Mean Time) e o UTC (Coordinated Universal Time), ambos são considerados o horário 0 e a partir deles vamos diminuindo ou aumentando os fusos. O UTC é o sucessor do GMT, porém o UTC é baseado em um relógio atômico e universal.
+
+    A String do Fuso Horário especifica o deslocamento em um número positivo ou negativo de horas e minutos da base de tempo padrão. Temos dois padrões utilizados para referência de fusos horários:
+
+      - Para datas superiores ao estabelecimento do UTC (Coordinated Universal Time) no início dos anos 1960, a base de tempo é 'Z' e o deslocamento indica o deslocamento de um fuso horário específico em relação ao horário no meridiano principal à 0º de longitude (que passa pelo Observatório Real de Greenwich, Inglaterra).
+
+      - Para datas anteriores ao UTC, a base de tempo é expressa em termos de UT1, que é o tempo solar contemporâneo da Terra no meridiano principal.
+    
+    Se a hora estiver em UTC, adicione um 'Z' logo após o tempo, sem espaço. O Z é o designador de zona para o deslocamento UTC 'zero', portanto "09:30 UTC" é representado como "09:30Z" ou "T0930Z". Outro exemplo, "​​14:45:15 UTC" seria "14:45:15Z" ou "T144515Z".
+
+    Na string de deslocamento de fuso horário, você pode colocar "Z" para indicar que a hora é especificada em UTC. Caso contrário, a string de fuso horário será construída da seguinte maneira:
+
+      1. Caractere do sinal do deslocamento: O caractere ("+" ou U+002B) para fusos horários à leste do meridiano principal ou o caractere ("-" ou U+002D) para fusos horários à oeste do meridiano principal.
+      
+      2. Número de horas com dois dígitos em que o fuso horário é deslocado do meridiano principal. (Este valor deve estar entre 00 e 23).
+
+      3. Caractere de dois pontos opcional ":".
+
+      4. Número de minutos com dois dígitos após a hora; este valor deve estar entre 00 e 59.
+
+      * Embora este formato permita fusos horários entre -23:59 e +23:59, o intervalo atual de deslocamentos de fuso horário é de -12:00 a +14:00.
+
+    ---------------------------------------------------------------------------  
+    Observações:
+
+    - O horário de Brasília costuma ser UTC-0300, mas em horário de verão ele é UTC-0200.
+
+    - Um deslocamento de zero, além de ter a representação especial "Z", também pode ser declarado numericamente como "+00:00", "+0000" ou "+00".
+  -->
+
+  <h2>Strings Válidas de Fuso Horário</h2>
+
+  <!-- Referência ao UTC / Deslocamento UTC 'zero' -->
+  <p><time>Z</time></p>
+
+  <!-- Variação Deslocamento UTC 'zero' -->
+  <p><time>+0000</time></p>
+
+  <!-- Variação Deslocamento UTC 'zero' -->
+  <p><time>+00:00</time></p>
+
+  <!-- UTC do Horário de Brasília -->
+  <p><time>-0300</time></p>
+
+  <!-- Variação UTC do Horário de Brasília -->
+  <p><time>-03:00</time></p>
+
+  <h2>Strings Válidas de Data e Hora Global</h2>
+
+  <!-- Data e hora global -->
+  <p><time>2001-09-11T08:46Z</time></p>
+
+  <!-- Variação Data e hora global -->
+  <time>2001-09-11 08:46Z</time>
+
+  <!-- Data e hora global com deslocamento de Fuso Horário -->
+  <p><time>2001-09-11T08:46-0500</time></p>
+
+  <!-- Variação Data e hora global com deslocamento de Fuso Horário -->
+  <p><time>2001-09-11T08:46-05:00</time></p>
+
+  <!-- Variação Data e hora global com deslocamento de Fuso Horário -->
+  <time>2001-09-11 08:46-05:00</time>
+
+  <!-- 
+    String de Semana
+
+    Para representar uma semana do ano devemos seguir a ordem:
+
+      - 4 ou mais dígitos ASCII representando o Ano (maior que 0).
+      - O caractere de menos "-"".
+      - O caractere "W".
+      - Dois dígitos ASCII represetando a Semana.
+  -->
+
+  <h2>Strings Válidas de Semana</h2>
+
+  <!-- Semana 47 do ano 2021 -->
+  <p><time>2021-W47</time></p>
+
+  <!-- 
+    String de Duração
+
+    Para representar uma duração de tempo devemos iniciar a String com o caractere "P" seguido por um ou mais dos seguintes subcomponentes, na ordem dada, onde o número de dias, horas, minutos e segundos correspondem ao mesmo número de segundos que em t:
+
+      1. Um ou mais dígitos ASCII seguidos da letra "D" representando um número de dias.
+
+      2. O caractere "T" seguido por um ou mais dos seguintes subcomponentes, na ordem fornecida:
+
+        I. Um ou mais dígitos ASCII seguidos da letra "H" representando as horas.
+
+        II. Um ou mais dígitos ASCII seguidos da letra "M" representando os minutos.
+
+        III. Os seguintes componentes:
+          
+          1. Um ou mais dígitos ASCII representando os segundos.
+
+          2. Opcionalmente o caractere "." seguido de dois ou três numeros representando uma fração de segundo.
+
+          3. O caractere "S".
+  -->
+
+  <h2>Strings Válidas de Duraão de Tempo</h2>
+
+  <!-- Duração de Tempo (4 horas 18 minutos e 3 segundos) -->
+  <p><time>PT4H18M3S</time></p>
+
+  <!-- Variação de Duração de Tempo (4 horas 18 minutos e 3 segundos) -->
+  <time>4h 18m 3s</time>
+
+
+  <!-- Exemplos do Cotidiano -->
+
+  <h2>Exemplos do Cotidiano</h2>
+
+  <!-- Exemplo simples -->
+  <p>A loja abre das <time>10:00</time> às <time>21:00</time> todos os dias da semana.</p>
+
+  <!-- Exemplos de conteúdo de texto que não são legíveis por uma máquina de acordo com a especificação, mas são aceitáveis​​, por causa da presença do atributo datetime, que faz uso de um formato válido. -->
+  <p>A vacinação da COVID-19 foi adiada para o <time datetime="2021-04">próximo mês</time>.</p>
+
+  <p>A próxima reunião está agendada para <time datetime="2021-10">Outubro</time>.</p>
+
+  <!-- Exemplo de pubdate em um artigo -->
+  <hr>
+  <article>
+    <h1>Artigo com Pubdate</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, eius esse tempora repudiandae quae molestiae fugiat numquam ex ea facilis exercitationem amet, asperiores hic fuga. Commodi est maxime qui optio.</p>
+    <footer>
+      <p>Artigo publicado em <time datetime="2021-03-30" pubdate>30 de Março de 2021</time>
+    </footer>
+  </article>
+  <hr>
+
+  <!-- 
+    Exemplos de uma Data e Hora flutuante válida:
+  
+    Esse formato é apresentado na especificação do W3C, mas não na versão WHATWG. Deve ser uma data e um tempo nos formatos:
+    
+    aaaa-mm-ddTHH:MM[:SS[.mm]] ou aaaa-mm-dd HH:MM[:SS[.mmm]]
+  -->
+
+  <!-- 23 de Junho de 1992 às 23 horas, 30 minutos, e 30 segundos -->
+  <p>Eu nasci na <time datetime="1992-06-23T23:30:30">Terça-feira às 23:30</time>.</p>
+
+  <!-- 12 de Junho de 2021 às 20 horas, 00 minutos -->
+  <p>Esse ano tenho uma encontro no <time datetime="2021-06-12 20:00">Dia dos namorados</time>.</p>
+
+  <!-- Exemplos de fuso horário válido (GMT+1 - Itália) -->
+  <p>Na Itália acerte o fuso do seu aparelho para <time>+01:00</time>.</p>
+
+  <!-- Exemplos de data completa -->
+
+  <!-- 11 de Setembro de 2001 às 08 horas, 46 minutos, e 00 segundos um fuso horário de UTC-4 (EUA) -->
+  <p>O ataque terrorista nos EUA aconteceu em <time datetime="2001-09-11T08:46:00-05:00">Setembro de 2001</time>.</p>
+
+  <!-- Exemplo de uma semana válida (A 18ª semana de 2021) -->
+  <p>O evento acontecerá na <time datetime="2021-W18">18ª semana de 2021</time>.</p>
+
+  <!-- Exemplo de um ano válido (2020) -->
+  <p>A pandemia começou no <time datetime="2020">ano passado</time>.</p>
+
+  <!-- 
+    Exemplo de string válida de duração:
+
+    Deve ser uma string representando uma duração. Uma duração pode começar com o prefixo “P” (para período) e usa “D” para marcar os dias. Por exemplo:
+  -->
+
+  <!-- Uma duração de 4 dias -->
+  <p>O prazo de inscrição se encerrará em <time datetime="P4D">quatro dias</time></p>
+
+  <!-- 
+    Limitações:
+
+    Você não pode indicar intervalos de datas. Então, se você estiver escrevendo um post sobre uma conferência que dura mais de um dia, por exemplo a partir de 26 de junho de 2021 a 28 de junho de 2021, você terá que usar dois elementos time.
+  -->
+
+  <h2>Limitações</h2>
+
+  <p>A conferência será realizada entre as datas <time datetime="2014-06-28">26 de Junho de 2014</time> e <time datetime="2014-06-28">28 Junho 2014</time></p>
+</body>
+</html>
