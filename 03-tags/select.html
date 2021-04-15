@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>select</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- select -->
+
+  <!-- 
+    O elemento HTML <select> representa um controle que apresenta um menu de opções. As opções dentro do menu são representadas pelo elemento <option>, que podem ser agrupados por elementos <optgroup>. As opções podem ser pré-selecionadas para o usuário.
+  -->
+
+  <!-- 
+    O elemento HTML <option> é usado para criar um controle que representa um item dentro de um elemento HTML5 <select>, <optgroup> ou <datalist>.
+
+    Atributos:
+
+      - disabled: Se este atributo booleano estiver definido, esta opção não é selecionável.
+
+      - label: Rótulo indicando o significado da opção. Se o atributo label não estiver definido, seu valor é o conteúdo de texto do elemento. Esse atributo é exibido pelo navegador.
+
+      - value: O conteúdo textual deste atributo representa o rótulo que explica a opção. Se ele não estiver definido, seu valor padrão é o texto contido no elemento.
+
+      - selected: Se presente, este atributo booleano indica que a opção está selecionada inicialmente.
+  -->
+
+  <!--
+    O elemento HTML <optgroup> cria um agrupamento de opções dentro do elemento <select>.
+
+    Atributos:
+
+      - label: É o nome do optgroup, é o que os navegadores irão exibir como rótulo. Este atributo é obrigatório se o elemento for usado.  
+    
+      - disabled: Se este atributo booleano for definido, nenhum dos itens neste optgroup poderá ser selecionado.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/select -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/option -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/optgroup -->
+
+  <h1>select</h1>
+
+  <form action="success-form.html">
+    <fieldset>
+      <legend>Escolha o seu time</legend>
+
+      <select name="time" required>
+        <option label="Selecione" disabled selected></option>
+
+        <optgroup label="SP">
+          <option value="sccp" label="Corinthians"></option>
+          <option value="sep" label="Palmeiras"></option>
+          <option value="sfc" label="Santos"></option>
+        </optgroup>
+  
+        <optgroup label="RJ">
+          <option value="crf" label="Flamengo"></option>
+          <option value="bfr" label="Botafogo"></option>
+          <option value="crv" label="Vasco"></option>
+        </optgroup>
+  
+        <optgroup label="RS">
+          <option value="sci" label="Internacional"></option>
+          <option value="fbpa" label="Grêmio"></option>
+        </optgroup>
+      </select>
+    </fieldset>
+    
+    <br>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

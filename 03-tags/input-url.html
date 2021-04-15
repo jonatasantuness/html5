@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input url</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input url -->
+
+  <!-- 
+    Os elementos de input do tipo url são usados ​​para permitir que o usuário insira e edite um URL.
+  -->
+
+  <!--
+    O valor contém um DOMString que é validado automaticamente como em conformidade com a sintaxe de URL. Mais especificamente, existem dois formatos de valor possíveis que passarão na validação:
+
+    1. Uma string vazia ("") indicando que o usuário não inseriu um valor ou que o valor foi removido.
+
+    2. Uma URL absoluta devidamente formado. Isso não significa necessariamente que o endereço exista, mas pelo menos está formatado como "urlscheme://restofurl"
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url -->
+
+  <h1>input url</h1>
+
+  <form action="success-form.html">
+    <label for="site">Insira a url do seu site com ssl: 
+      <input type="url" name="site" id="site" placeholder="https://example.com"
+       pattern="https://.*" size="100" maxlength="100" required>
+    </label>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

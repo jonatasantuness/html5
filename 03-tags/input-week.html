@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input week</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input week -->
+
+  <!-- 
+    Os elementos de input do tipo week são campos de entrada que permitem a entrada fácil de um ano mais o número da semana ISO 8601 durante esse ano (ou seja, semana 1 a 52 ou 53).
+  -->
+
+  <!--
+    Notas:
+
+    - A interface do usuário do controle varia de navegador para navegador; o suporte entre navegadores é atualmente um pouco limitado, com apenas Chrome/Opera e Microsoft Edge suportando no momento. Em navegadores sem suporte, o controle se degrada normalmente para funcionar de forma idêntica ao <input type="text">.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week -->
+
+  <h1>input time</h1>
+
+  <form action="success-form.html">
+    <label for="eventWeek">Escolha semana do evento em 2021: 
+      <input type="week" name="eventWeek" id="eventWeek" min="2021-W01" max="2021-W53" value="2021-W01" required>
+    </label>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

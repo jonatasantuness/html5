@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input submit</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input submit -->
+
+  <!-- 
+    Os elementos de input do tipo submit são renderizados como botões. Quando o evento de clique ocorre (normalmente porque o usuário clicou no botão), o navegador tenta enviar o formulário ao servidor.
+  -->
+
+  <!-- 
+    Os inputs do tipo "submit" são usados ​​para enviar formulários. Se você deseja criar um botão customizado e então modificar o comportamento usando JavaScript, você precisa usar <input type="button">, ou melhor ainda, um elemento <button>.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit -->
+
+  <h1>input submit</h1>
+
+  <form action="success-form.html">
+    <label for="username">Nome: <input type="text" id="username" name="username" required></label>
+
+    <label for="lastname">Sobrenome: <input type="text" id="lastname" name="lastname" required></label>
+
+    <label for="birthday">Data de Nascimento: <input type="date" id="birthday" name="birthday" required></label>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

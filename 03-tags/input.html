@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input</title>
+</head>
+<body>
+  <!-- input -->
+
+  <!-- 
+    O elemento HTML <input> é usado para criar campos de entrada de dados em formulários. A semântica de um <input> varia consideravelmente dependendo do valor de seu atributo type.
+  -->
+
+  <!--
+    Atributos:
+
+    - type: Define o tipo de input, o tipo padrão é text.
+
+      - button: Um botão sem comportamento padrão.
+
+      - checkbox: Uma caixa de marcação, o atributo value define o valor enviado por este item. Use o atributo checked para indicar se o item está selecionado por padrão. Você também pode usar o atributo indeterminate para indicar que a caixa de marcação está em um estado indeterminado (na maioria das plataformas, isso desenha uma linha horizontal cortando a caixa).
+
+      - color*: Um controle para selecionar cores em formato de texto.
+
+      - date*: Um controle para inserir uma data (ano, mês e dia, sem horário).
+
+      - datetime*: Um controle para inserir data e horário (hora, minuto, segundo e fração de segundo) baseado no fuso horário UTC. (DESCONTINUADA)
+
+      - datetime-local*: Um controle para inserir data e horário, sem fuso horário.
+
+      - email*: Um campo para editar um endereço de e-mail. O valor do campo é validado para estar vazio ou ter um único endereço de e-mail válido antes de ser enviado. As pseudoclasses CSS :valid e :invalid são aplicadas apropriadamente.
+
+      - file: Um controle que permite ao usuário selecionar um arquivo. Use o atributo 'accept' para definir os tipos de arquivo que o controle pode selecionar.
+
+      - hidden: Um controle que não é exibido mas cujo valor é enviado ao servidor.
+
+      - image: Um botão gráfico para enviar o formulário. Você deve usar o atributo src para definir a fonte da imagem e o atributo alt para definir um texto alternativo. Você pode usar os atributos height e width para definir o tamanho da imagem em pixels.
+
+      - month*: Um controle para inserir mês e ano, sem fuso horário.
+
+      - number*: Um controle para inserir um número de ponto flutuante.
+
+      - password: Um campo de texto com uma só linha cujo valor é obscurecido. Use o atributo maxlength para especificar o comprimento máximo do valor que pode ser inserido.
+
+      - radio: Um botão de escolha. Você deve usar o atributo value para definir o valor a ser enviado por este item. Use o atributo checked para indicar se este item deve estar selecionado por padrão. Botões de escolha que têm o mesmo valor para o atributo name estão no mesmo "grupo de botões de escolha"; apenas um botão de escolha no grupo pode estar selecionado de cada vez.
+
+      - range*: Um controle para inserir um número cujo valor exato não é importante. Este tipo de controle usa os seguintes valores padrão se os atributos correspondentes não forem especificados:
+
+        - min: 0
+        - max: 100
+        - value: min + (max-min) / 2, ou min se o max for menos que min.
+        - step: 1
+
+      - reset: Um botão que faz o conteúdo do formulário voltar a ter seus valores padrão.
+
+      - search*: Um campo de texto com uma só linha para digitar termos de busca; quebras de linha são automaticamente removidas do valor entrado.
+
+      - submit: Um botão que envia o formulário.
+
+      - tel*: Um controle para inserir um número de telefone; quebras de linha são automaticamente removidas do valor entrado, mas nenhuma outra sintaxe é imposta. Você pode usar atributos como pattern e maxlength para restringir os valores inseridos no controle. As pseudoclasses CSS :valid e :invalid são aplicadas apropriadamente.
+
+      - text: Um campo de texto com uma só linha; quebras de linha são automaticamente removidas do valor entrado.
+
+      - time*: Um controle para inserir um horário sem fuso horário.
+
+      - url*: Um campo para editar uma URL. O valor inserido é validado para ser vazio ou uma URL absoluta válida antes de ser enviado. Quebras de linha e espaços em branco antes e após o valor inserido são automaticamente removidos. Você pode usar atributos como pattern e maxlength para restringir os valores inseridos no controle. As pseudoclasses CSS :valid e :invalid são aplicadas apropriadamente.
+
+      - week*: Um controle para inserir uma data consistindo de ano da semana e número da semana sem fuso horário.
+
+      * Tipos novos que foram adicionados do HTML 5.
+
+    - accept: Se o valor do atributo type for 'file', este atributo indica quais tipos de arquivo o servidor aceita. O valor deve ser uma lista de especificadores de tipo únicos separados por vírgula:
+
+      - Uma extensão de arquivo. (.jpg, .png, .doc, etc...)
+      - Um tipo MIME sem extensões.
+      - Em HTML5 (audio/*, video/*, image/*).
+
+    - alt: Texto alternativo (apenas para type 'image').
+
+    - autocomplete: Habilita o autocomplete do navegador. (on, off)
+
+    - autofocus: Define o foco neste campo quando a página é carregada. (autofocus)
+
+    - checked: Define se o campo está marcado/selecionado. (apenas para os types 'checkbox' e 'radio') (checked)
+
+    - dirname: Informa qual a direção do texto do input. (NomeDoInput.dir)
+
+    - disabled: Define que o campo está desabilitado. (disabled)
+
+    - form: O ID do forumlário à qual esse campo está associado.
+
+    - formaction: A URI do sistema que processa a informação enviada pelo campo (apenas para types 'sumit' e 'image'). Se especificado, ele sobrescreve o atributo action do formulário dono do elemento.
+
+    - formenctype: Define qual codificação de formulário será usada (apenas para types 'sumit' e 'image'). Se especificado, ele sobrescreve o atributo enctype do formulário dono do elemento.
+
+    - formmethod: Define o método de envio do formulário (apenas para types 'sumit' e 'image'). Se especificado, ele sobrescreve o atributo method do formulário dono do elemento.
+
+    - formonvalidate: Desativa a validação do formulário. (sobrescreve os demais atributos semelhantes.
+
+    - formtarget: Palavra-chave que indica onde exibir a resposta recebida após o envio do formulário (apenas para types 'sumit' e 'image'). Se especificado, ele sobrescreve o atributo target do formulário dono do elemento.
+
+    - height: Define a altura do campo.
+    
+    - width: Define a largura do campo.
+
+    - list: Define qual tag datalist está vinculada com este campo. (ID do datalist)
+
+    - max: Atribui um valor máximo (númerico ou data).
+
+    - min: Atribui um valor mínimo (númerico ou data).
+
+    - maxlength: Atribui um comprimento máximo de caracteres para os types: text, email, search, password, tel ou url. Seu valor pode exceder o do atributo size. Se não for especificado, o usuário pode inserir uma quantidade ilimitada de caracteres.
+
+    - minlength: Equivalente ao atributo max porém define o comprimento mínimo.
+
+    - multiple: Este atributo booleano indica se o usuário pode inserir mais de um valor. Ele é aplicado quando o atributo type está definido como 'email' ou 'file'.
+
+    - name: Atributo essencial, define o nome do campo que é enviado junto com os dados do formulário.
+
+    - pattern: Define uma expressão regular para fazer a validação do campo. (regex)
+
+    - placeholder: Exibe um texto de dica para o usuário preencher. (texto)
+
+    - readonly: Indica que o atributo é somente leitura e o usuário não pode modificar o valor do campo. Este atributo é ignorado se o valor do atributo type for hidden, range, color, checkbox, radio, file ou um tipo de botão.
+
+    - required: Este atributo especifica que o usuário deve preencher o campo com um valor antes de enviar o formulário. Ele não pode ser usado quando o atributo type está definido como hidden, image ou um tipo de botão (submit, reset ou button). As pseudoclasses CSS :optional e :required serão aplicadas ao campo como for apropriado.
+
+    - size: O tamanho inicial do controle. Este valor é em pixels a não ser que o valor do atributo type seja text ou password. Neste caso, este valor é um número inteiro de caracteres. A partir do HTML5, este atributo é aplicado apenas quando o atributo type está definido como 'text', 'search', 'tel', 'url', 'email' ou 'password'. O tamanho deve ser maior que zero. Se você não especificar um tamanho, o valor padrão 20 é usado.
+
+    - src: Se o valor do atributo type for 'image', este atributo especifica uma URI para a localização de uma imagem a ser exibida no botão gráfico; caso contrário, este atributo é ignorado. (url)
+
+    - step: Trabalha junto com os atributos min e max para limitar os incrementos em que valores numéricos ou datas podem ser alterados. Seu valor pode ser any ou um número de ponto flutuante positivo. Se o valor não for any, o controle aceita somente valores múltiplos valor do incremento maiores que o mínimo. 
+
+    - value: O valor inicial do controle. Este atributo é opcional exceto quando o valor do atributo type for radio ou checkbox.
+  -->
+
+  <!-- 
+    Notas:
+
+    - Mensagens de Erro: Se você quiser que o Firefox mostre uma mensagem de erro personalizada quando a validação de um campo falha, você pode usar o atributo x-moz-errormessage para isso:
+
+      <input type="email" x-moz-errormessage="Por favor, especifique um endereço de e-mail.">
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input#compatibilidade_de_navegadores -->
+
+  <h1>input</h1>
+
+  <p>Veja os exemplo de cada input nos outros arquivos!</p>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input date</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input date -->
+
+  <!-- 
+    Os elementos de input do tipo color fornecem um elemento de interface do usuário que permite ao usuário especificar uma cor, seja por uma interface de seletor visual de cores ou inserindo a cor em um campo de texto no formato #rrggbb hexadecimal.
+  -->
+
+  <!--
+    Apenas cores simples (sem canal alpha) são permitidas, embora as cores CSS tenham mais formatos, por exemplo, nomes de cores, notações funcionais e um formato hexadecimal com um canal alpha.
+  -->
+
+  <!-- 
+    A apresentação do elemento pode variar de um navegador ou plataforma para outro - pode ser uma entrada textual simples que valida automaticamente para garantir que as informações de cor sejam inseridas no formato adequado.
+  -->
+
+  <!-- 
+    O valor de um elemento <input> do tipo color é sempre um DOMString que contém uma string de 7 caracteres especificando uma cor RGB em formato hexadecimal. Embora você possa inserir a cor em maiúsculas ou minúsculas, ela será armazenada em minúsculas. O valor nunca está em qualquer outra forma e nunca está vazio.
+  -->
+
+  <!--
+    Notas:
+
+    - Definir o valor para qualquer coisa que não seja uma cor RGB válida e totalmente opaca em notação hexadecimal resultará na definição do valor para #000000.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color -->
+
+  <h1>input color</h1>
+
+  <form action="success-form.html">
+    <legend>Escolha a cor do produto:</legend>
+
+    <label for="corBase">Cor Base: <input type="color" id="corBase" name="corBase" value="#000000" required></label>
+
+    <label for="corEstampa">Cor Estampa: <input type="color" id="corEstampa" name="corEstampa" value="#FFFFFF" required></label>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

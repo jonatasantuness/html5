@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input image</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input image -->
+
+  <!-- 
+    Os elementos de input do tipo image são usados ​​para criar botões de submit gráficos, ou seja, botões de envio que têm a forma de uma imagem em vez de texto.
+  -->
+
+  <!-- 
+    Este elemento não aceita atributos de valor. O caminho para a imagem a ser exibida é especificado no atributo src.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image -->
+
+  <h1>input image</h1>
+
+  <form action="success-form.html">
+    <!-- O pattern aceita apenas digitos de letras e espaços, sem números ou caracteres especiais -->
+    <label for="name">Usuário: <input type="text" id="user" name="user" minlength="5" maxlength="20" size="20" required></label>
+    
+    <input type="image" id="image" alt="Login" width="100" src="../img/login-button.png">
+  </form>
+</body>
+</html>

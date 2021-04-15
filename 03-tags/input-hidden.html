@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input hidden</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid,
+    textarea:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid,
+    textarea:not([type='submit']):valid {
+      color: green;
+    }
+
+    textarea {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- input hidden -->
+
+  <!-- 
+    Os elementos de input do tipo hidden permitem que os desenvolvedores da web incluam dados que não podem ser vistos ou modificados pelos usuários quando um formulário é enviado. Por exemplo, o ID do conteúdo que está sendo solicitado/editado ou um token de segurança.
+  -->
+
+  <!-- 
+    Esses inputs são completamente invisíveis na página renderizada e não há como torná-las visíveis no conteúdo da página. Os inputs ocultas não participam da validação, eles não têm nenhum valor real a ser restringido.
+  -->
+
+  <!-- 
+    O valor do input é um DOMString que contém os dados ocultos que você deseja incluir quando o formulário é enviado ao servidor. Isso não pode ser editado ou visto pelo usuário por meio da interface do usuário, embora você possa editar o valor por meio das ferramentas de desenvolvedor do navegador.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden -->
+
+  <h1>input hidden</h1>
+
+  <form action="success-form.html">
+    <!-- O dado do input hidden postId será enviado de maneira oculta -->
+    <label for="postTitle">Título do Post: <input type="text" id="postTitle" name="postTitle" minlength="10" maxlength="50" pattern="[a-zA-Z'-'\s]*" required></label>
+
+    <label for="postText">Texto do Post: </label>
+    <textarea id="postText" name="postText" cols="60" rows="5" required></textarea>
+
+    <input type="hidden" id="postId" name="postId" value="34657">
+    
+    <section id="submit">
+      <input type="submit" value="Enviar">
+    </section>
+  </form>
+</body>
+</html>

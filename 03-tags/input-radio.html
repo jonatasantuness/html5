@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input radio</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+
+    fieldset {
+      margin: 1em 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- input radio -->
+
+  <!-- 
+    Os elementos de input do tipo radio são geralmente usados ​​em "radio groups" - coleções de botões de rádio que descrevem um conjunto de opções relacionadas.
+  -->
+
+  <!--
+    Apenas um botão de opção em um determinado grupo pode ser selecionado ao mesmo tempo. Os botões de opção são normalmente representados como pequenos círculos, que são preenchidos ou destacados quando selecionados. O valor é um DOMString que contém o valor do botão de opção.
+  -->
+
+  <!--
+    Radio groups
+
+    Para criar um grupo de radio é necessário definir a cada um dos botões de rádio no grupo o mesmo valor no atributo "name". Uma vez que um grupo de rádio é estabelecido, selecionar qualquer botão naquele grupo desmarca automaticamente qualquer outro botão atualmente selecionado no mesmo grupo.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio -->
+
+  <h1>input radio</h1>
+
+  <form action="success-form.html">
+    <legend>Escolha uma opção de cor:</legend>
+  
+    <fieldset>
+      <!-- Podemos edixar uma opção como default utilizando o atributo "checked". -->
+      <label for="red">Vermelho: <input type="radio" id="red" name="coloroption" value="red" checked></label>
+          
+      <label for="blue">Azul: <input type="radio" id="blue" name="coloroption" value="blue"></label>
+
+      <label for="green">Verde: <input type="radio" id="green" name="coloroption" value="green"></label>
+    </fieldset>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

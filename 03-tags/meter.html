@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>meter</title>
+</head>
+<body>
+  <!-- meter -->
+
+  <!-- 
+    O elemento HTML <meter> pode representar atráves de um elemento UI do navegador, um valor escalar dentro de um intervalo conhecido ou um valor fracionário. Pode ser usado por exemplo para apresentar escalas de temperatura de forno em uma receita, notas escolares ou medições de espaço de armazenamento em disco.
+  -->
+
+  <!--
+    Atributos:
+
+    - form: Define a qual formulário o medidor pertence (ID do formulário).
+
+    - high: Define a partir de qual valor, devemos considerar um valor alto (number)
+
+    - low: Define a partir de qual valor, devemos considerar um valor baixo (number)
+
+    - max: Define o valor máximo. (number)
+    
+    - min: Define o valor mínimo. (number)
+
+    - optimum: Define o valor ideal para o medidor. (number)
+
+    - value: Define o valor atual. (number)
+  -->
+
+  <!--
+    Notas:
+
+    - A não ser que o atributo value esteja entre 0 e 1 (inclusive), o atributo min e o atributo max devem definir o intervalo de modo que o valor do atributo value esteja dentro dele.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/meter -->
+
+  <h1>meter</h1>
+
+  <p>Aqueça o forno para <meter min="200" max="500" value="350">350 graus</meter>.</p>
+
+  <p>Ele recebeu <meter low="60" high="80" max="100" value="60" optimum="90">C</meter> no exame.</p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>u</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    u.spelling {
+      text-decoration: red wavy underline;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    cite {
+      font-style: normal;
+      text-decoration: underline;
+    }  
+  </style>
+</head>
+<body>
+  <!-- u -->
+
+  <!-- 
+    O elemento HTML <u> representa um trecho de texto embutido que deve ser interpretado como uma anotação não textual. Isso é renderizado por padrão como um sublinhado sólido simples, mas pode ser alterado usando CSS.
+  -->
+
+  <!-- 
+    Os casos de uso válidos para o elemento <u> incluem anotação de erros de ortografia por exemplo.
+  -->
+
+  <!-- 
+    Notas:
+
+    - Esse elemento costumava ser chamado de elemento Underline (Sublinhado) em versões antigas do HTML, às vezes, ainda é mal utilizado dessa forma. Para sublinhar o texto, você deve aplicar um estilo que inclua a propriedade CSS text-decoration.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u -->
+
+  <h1>u</h1>
+
+  <p>Este parágrafo inclui uma palavra soletrada <u class="spelling">errradaa</u>.</p>
+
+  <!-- 
+    Na maioria das vezes, você realmente não deseja usar <u>. Aqui estão alguns exemplos que mostram o que você deve fazer em vários casos:
+  -->
+
+  <!-- Underlines Não Semânticos (Utilizando classe) -->
+  <p><span class="underline">Prato Especial de hoje</span><br>Picadinho com cerveja</p>
+
+  <!-- Título de um livro (Estilizando a tag semântica cite) -->
+  <p>Nós lemos <cite>Moby Dick</cite> no primeiro semestre.</p>
+</body>
+</html>

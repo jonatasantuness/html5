@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input reset</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input reset -->
+
+  <!-- 
+    Os elementos de input do tipo reset são são renderizados como botões, com um manipulador de eventos de clique padrão que redefine todas as entradas no formulário para seus valores iniciais.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/reset -->
+
+  <h1>input reset</h1>
+
+  <form action="success-form.html">
+    <label for="username">Nome: <input type="text" id="username" name="username" required></label>
+
+    <label for="lastname">Sobrenome: <input type="text" id="lastname" name="lastname" required></label>
+
+    <label for="birthday">Data de Nascimento: <input type="date" id="birthday" name="birthday" required></label>
+    
+    <input type="reset" value="Resetar">
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

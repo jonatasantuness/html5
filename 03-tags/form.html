@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form</title>
+</head>
+<body>
+  <!-- form -->
+
+  <!-- 
+    O elemento HTML <form> representa uma seção que contém campos de entrada de um formulário que permitem ao usuário submeter informação a um determinado servidor web.
+  -->
+
+  <!--
+    Atributos:
+
+    - accept-charset: Define o encode ao enviar o formulário. (charset)
+
+    - action: A URI de um programa que processa as informações enviadas por meio do formulário. Este valor pode ser substituído por um atributo 'formaction' em um elemento <button> ou <input>. (URL)
+
+    - autocomplete: Define se os inputs do formulário podem ter seu valores preenchidos automaticamente pelo navegador. Essa configuração pode ser substituída por um atributo autocomplete em um elemento pertencente ao formulário. Se você desativar o atributo em um formulário porque o documento fornece seu próprio preenchimento automático, você também deverá definir autocomplete off para cada um dos elementos de entrada do formulário que o documento pode preencher automaticamente. (off, on)
+
+    - enctype: Define qual codificação de formulário será usada, como ele vai agrupar os dados campos e enviar para o servidor separa campos e valores:
+      
+      - application/x-www-form-urlencoded: É o valor padrão se o atributo não for especificado.
+
+      - multipart/form-data: Use este valor se estiver usando um elemento <input> com o atributo type definido como "file".
+
+      - text/plain (HTML5)
+
+      * Este valor pode ser substituído por um atributo 'formenctype' em um elemento <button> ou <input>.
+
+    - method: Define o método de envio dos dados. (GET, POST)
+
+        - GET: Corresponde ao método HTTP GET; os dados do formulário são anexados ao URI do atributo 'action', utilizando um '?' como separador, e o URI resultante é enviado ao servidor.
+
+        - POST: Corresponde ao método HTTP POST; os dados do formulário são incluídos no corpo (body) na requisição do formulário e são enviados ao servidor.
+
+        * Este valor pode ser substituído por um atributo 'formmethod' em um elemento <button> ou <input>.
+    
+    - name: Define o nome do formulário.
+
+    - novalidate: Atributo booleano que indica se o formulário deve ser validado ou não. Esta configuração padrão pode ser substituída por um atributo 'formnovalidate' em um elemento <button> ou <input> pertencente ao formulário.
+
+    - target: Palavra-chave que indica onde exibir a resposta recebida após o envio do formulário (No HTML 4, é o nome ou a palavra-chave de um frame) e em HTML5, é o nome ou a palavra-chave de um contexto de navegação, por exemplo: tab, window, or frame embutido, por padrão é '_self'. No HTML5 este valor pode ser substituído por um atributo 'formtarget' em um elemento <button> ou <input>. (_self, _blank, _parent, _top, iframename)
+  -->
+
+  <!-- 
+    Notas:
+
+    - A UI do Google Chrome para o autocomplete varia, dependendo se o preenchimento automático está desativado nos inputs ou nos formulários. Se o autocomplete de um form está desativado porém ou inputs não, quando o usuário solicitar sugestões de preenchimento automático para um input, o Chrome pode exibir uma mensagem dizendo "o preenchimento automático foi desativado para este formulário". Porém se o form estiver desativado e os inputs também, o navegador não exibirá a mensagem. Então você deve desativar o autocomplete em cada input com autocomplete personalizado.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/code -->
+
+  <h1>form</h1>
+
+  <!-- GET: ao submeter o form, o action o enviará para uma página em uma nova aba (conforme definido em target), com os dados separados por Query String junto a URL. -->
+  <section id="getForm">
+    <h2>Exemplo GET</h2>
+    <form action="success-form.html" method="GET" target="_blank">
+      <input type="text" name="nameGetExample" placeholder="Nome">
+      <input type="password" name="passwordGetExample" placeholder="senha">
+      <input type="submit" value="Enviar">
+    </form>
+  </section>
+  
+  <!-- POST: Neste exemplo precisariamos de uma aplicação backend para tratar os dados enviados no corpo (body) dessa requisição. -->
+  <section id="postForm">
+    <h2>Exemplo POST</h2>
+    <form action="/send" method="POST" target="_blank">
+      <input type="text" name="namePostExample" placeholder="Nome">
+      <input type="password" name="passwordPostExample" placeholder="senha">
+      <input type="submit" value="Enviar">
+    </form>
+  </section>
+</body>
+</html>

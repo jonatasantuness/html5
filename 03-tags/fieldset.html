@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fieldset</title>
+</head>
+<body>
+  <h1>fieldset</h1>
+
+  <!-- fieldset -->
+
+  <!-- 
+    A tag HTML <fieldset> é usado para agrupar elementos, assim como labels (<label>), dentro de um formulário web. Essa tag por padrão desenha uma borda ao redor dos campos agrupados.
+  -->
+
+  <!-- 
+    Pode ser usada em conjunto com com a tag <legend> para nomear o grupo, os inputs dentro do mesmo grupo devem possuir o mesmo significado semântico, exemplo "Dados do endereço, Dados do Usuário, etc".
+  -->
+
+  <!-- 
+    Ao inserir o atributo disabled em um <fieldset>, todos os inputs do grupo serão desabilitados.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/fieldset -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/legend -->
+
+  <form action="success-form.html">
+    <fieldset disabled>
+      <legend>Dados Sobre o Usuário</legend>
+       <label for="name">Insira o nome aqui: <input type="text" id="name" name="name"></label>
+
+       <br>
+
+       <label for="lastname">Insira o sobrenome aqui: <input type="text" id="lastname" name="lastname"></label>
+
+       <br>
+
+      <input type="submit" value="Enviar">
+    </fieldset>
+  </form>
+</body>
+</html>

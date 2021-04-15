@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input datetime-local</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input datetime-local -->
+
+  <!-- 
+    Os elementos de input do tipo datetime-local criam controles de entrada que permitam ao usuário inserir facilmente uma data e uma hora, incluindo o ano, mês e dia, bem como a hora em horas e minutos.
+  -->
+
+  <!-- 
+    O controle representa uma data e hora local, não necessariamente a data e hora local do usuário. Ou seja, a implementação deve permitir qualquer combinação válida de ano, mês, dia, hora e minuto - mesmo se tal combinação for inválida no fuso horário local do usuário (como horários dentro de um intervalo de transição de primavera para frente do horário de verão). Alguns navegadores móveis (principalmente no iOS) não implementam isso corretamente.
+  -->
+
+  <!--
+    Notas:
+
+    - Por causa do suporte limitado do navegador para datetime-local e as variações em como as entradas funcionam, atualmente ainda pode ser melhor usar um Framework ou biblioteca para apresentá-los, ou usar uma entrada personalizada de sua preferência. Outra opção é usar campos de data e hora separadas, que possuem suporte mais amplo do que datetime-local.
+  -->
+
+  
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local -->
+
+  <h1>input datetime-local</h1>
+
+  <form action="success-form.html">
+    <label for="party">Insira uma data e hora para a reserva da sua festa: <input type="datetime-local" id="party" name="party" max="2021-12-31T12:30" required></label>
+
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

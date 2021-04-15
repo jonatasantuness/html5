@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input time</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input time -->
+
+  <!-- 
+    Os elementos de input do tipo time criam campos de inserção que permitem que o usuário digite horários facilmente (horas e minutos e, opcionalmente, segundos).
+  -->
+
+  <!--
+    Notas:
+
+    - A interface de usuário deste tipo de campo varia de navegador para navegador. A maioria dos navegadores modernos é compatível com ele exceto pelo Safari, o único grande navegador que ainda não o implementou; no Safari (e em qualquer outro navegador que ainda não suporte <time>), ele regride para <input type="text">.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/input/time -->
+
+  <h1>input time</h1>
+
+  <form action="success-form.html">
+    <label for="worktime">Escolha a hora inicial do trabalho: 
+      <input type="time" id="worktime" name="worktime" min="07:00" max="22:00" value="09:00" required>
+      <small>(entre 7h até às 22h)</small>
+    </label>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

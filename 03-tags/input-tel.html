@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input tel</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input tel -->
+
+  <!-- 
+    Os elementos de input do tipo tel são usados ​​para permitir que o usuário insira e edite um número de telefone. Ao contrário dos inputs tipo email e url, o valor de tel não é validado automaticamente para um formato específico antes que o formulário possa ser enviado, porque os formatos dos números de telefone variam muito em todo o mundo, então é necessário uma validação através do pattern ou utilização de scripts de máscaras.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel -->
+
+  <h1>input tel</h1>
+
+  <form action="success-form.html">
+    <label for="tel">Telefone: <input type="tel" id="tel" name="tel" pattern="\+\d{2}\s\(\d{2}\)\s\d{4,5}-?\d{4}" placeholder="+99 (99) 99999-9999" required></label>
+
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

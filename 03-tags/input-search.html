@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input search</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input search -->
+
+  <!-- 
+    Os elementos de input do tipo search são campos de texto projetados para o usuário inserir consultas de pesquisa. Elas são funcionalmente idênticas às entradas de texto, mas podem ter um estilo diferente pelo navegador.
+  -->
+
+  <!--
+    O valor contém um DOMString que representa o valor contido no campo de pesquisa. Podemos recupera-lo usando a propriedade value em JavaScript.
+  -->
+
+  <!--
+    Notas:
+
+    - Lembre-se de definir o atributo "name" para o input search, caso contrário, nada será enviado. O nome mais utilizado é o "q".
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search -->
+
+  <h1>input search</h1>
+
+  <form action="success-form.html">
+    <!-- O aria-label é um rótulo de texto descritivo que será lido pelo leitor de tela; é usado como um equivalente não visual para <label>. -->
+    <input type="search" id="site-search" name="q" placeholder="Pesquise um termo" aria-label="Pesquise no conteúdo do site">
+    
+    <input id="submit" type="submit" value="Enviar">
+  </form>
+</body>
+</html>

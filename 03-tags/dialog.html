@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dialog</title>
+</head>
+<body>
+  <!-- dialog -->
+
+  <!-- 
+    O elemento HTML <dialog> representa uma caixa de diálogo ou outro componente interativo, como um modal por exemplo.
+  -->
+
+  <!--
+    Os navegadores com suporte ao elemento <dialog> (Chrome 37+ e Opera 27+) devem renderizar o elemento escondido, por padrão. O elemento é apresentado mediante uma requisição via JavaScript utilizando os métodos show() ou showModal(), e para fechar, é utilizado o método close(). (Chrome 37+ and Opera 27+ Normalmente, utilizamos este método com um evento click.
+  -->
+
+  <!--
+    Atributos:
+
+    - open: Indica que o Dialog está ativo e pronto para uso. Quando o atributo open não for definido, ele não deve ser mostrado ao usuário.
+  -->
+
+  <!--
+    Notas:
+
+    - O metódo show() apresenta o objeto de acordo com a posição no fluxo do DOM. Se você adicionar o elemento logo após fechar a tag body, ele deve ser apresentado no rodapé da página. Já o showModal() por outro lado, vai apresentar o elemento como um modal. Por padrão o modal é apresentado no centro da página, e ele fica no topo das camadas, como a API fullScreen, por exemplo, o que previne a interferência do z-index, posições relativas e o overflow de elementos pai.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/dialog -->
+
+  <h1>dialog</h1>
+
+  <!-- Um dialog simples contendo um form -->
+  <dialog id="favDialog">
+    <form action="success-form.html" method="dialog">
+      <section>
+        <p>
+          <label for="favAnimal">Escolah seu animal favorito:</label>
+          <select id="favAnimal">
+            <option></option>
+            <option>Cavalo</option>
+            <option>gato</option>
+            <option>Cachorro</option>
+          </select>
+        </p>
+      </section>
+      <menu>
+        <button id="cancel" type="reset">Cancelar</button>
+        <button type="submit">Confirmar</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <menu>
+    <button id="updateDetails">Abrir Modal</button>
+  </menu>
+
+  <script>
+    (function() {
+      var updateButton = document.getElementById('updateDetails');
+      var cancelButton = document.getElementById('cancel');
+      var favDialog = document.getElementById('favDialog');
+
+      // O botão Update abre uma Dialog
+      updateButton.addEventListener('click', function() {
+        favDialog.showModal();
+      });
+
+      // O botão cancelButtom fecha uma Dialog
+      cancelButton.addEventListener('click', function() {
+        favDialog.close();
+      });
+    })();
+  </script>
+</body>
+</html>

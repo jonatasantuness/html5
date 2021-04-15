@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input date</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input date -->
+
+  <!-- 
+    Os elementos de input do tipo date criam campos de entrada que permite o usuário informar uma data, como também usar uma caixa de texto que valida automaticamente o conteúdo, ou usando uma interface de seleção de data.
+  -->
+
+  <!-- 
+    O valor resultante inclui ano, mês e dia, mas não o horário. Os tipos de entrada time e datetime-local permitem informar horário e data/hora.
+  -->
+
+  <!-- 
+    A interface do usuário do controle varia geralmente de navegador para navegador; neste momento o suporte é irregular, veja Browser compatibility para maiores detalhes. Nos navegadores sem suporte, o controle é rebaixado graciosamente para um  <input type="text"> simples.
+  -->
+
+  <!-- 
+    Seu valor é um DOMString que representa a data informada na entrada. Você pode definir o valor padrão para a entrada incluindo uma data no formato yyyy-mm-dd dentro do atributo value, como: "2017-06-01"
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/input/date -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/input/date#browser_compatibility -->
+
+  <h1>input date</h1>
+
+  <h2>Exemplo Simples</h2>
+
+  <form action="success-form.html">
+    <label for="birthday">Data de Aniversário: <input type="date" id="birthday" name="birthday" required></label>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+  <h2>Exemplo Com Data Mínima e Máxima</h2>
+  
+  <form action="success-form.html">
+    <legend>Selecione a data do evento em 2021</legend>
+    <label for="birthday">Data de Aniversário: <input type="date" id="birthday" name="birthday" min="2021-01-01" max="2021-12-31" required></label>
+
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

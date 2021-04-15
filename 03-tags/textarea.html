@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>textarea</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- textarea -->
+
+  <!-- 
+    O elemento HTML <textarea> representa um controle de edição para uma caixa de texto, útil quando você quer permitir ao usuário informar um texto  extenso em formato livre, como um comentário ou formulário de retorno. 
+  -->
+
+  <!--
+    Atributos:
+
+    - rols/cols: O rows e cols atributos permitem especificar um tamanho exato para o <textarea> pegar. Definir isso é uma boa idéia para manter a consistência, pois os padrões do navegador podem ser diferentes.
+
+    - maxlength: Número máximo de caracteres.
+
+    - minlength: Número mínimo de caracteres.
+
+    - wrap: Especifica o comportamento de quebra automática do texto quando ele atinge a borda do <textarea>.
+  -->
+
+  <!--
+    Notas:
+
+    - Se você deseja inserir um conteúdo padrão para o seu <textarea>, você o insere entre as tags de abertura e fechamento. <textarea> não suporta o atributo value.
+
+    - O <textarea> O elemento também aceita vários atributos comuns para formar <input>s, tal comoautocomplete, autofocus, disabled, placeholder, readonly, e required.
+
+    - Na maioria dos navegadores, <textarea>s são redimensionáveis - você notará a alça de arrasto no canto direito. Isso é controlado pela propriedade CSS "rezise", o redimensionamento está ativado por padrão, mas você pode desativá-lo explicitamente no CSS atribuindo o valor "none".
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/textarea -->
+
+  <h1>textarea</h1>
+
+  <form action="success-form.html">
+    <textarea name="msg" id="msg" cols="30" rows="10">Digite sua mensagem aqui</textarea>
+    
+    <br>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

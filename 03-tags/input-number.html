@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input number</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input number -->
+
+  <!-- 
+    Os elementos de input do tipo number são usados ​​para permitir que o usuário insira um número. Eles incluem validação embutida para rejeitar entradas não numéricas.
+  -->
+
+  <!--
+    O navegador pode fornecer setas deslizantes para permitir que o usuário aumente e diminua o valor usando o mouse ou tocando com a ponta do dedo.
+  -->
+
+  <!--
+    Qualquer número é um valor aceitável, desde que seja um número de ponto flutuante válido (ou seja, não NaN ou Infinity).
+  -->
+
+  <!-- 
+    os elementos NÃO suportam o uso do atributo pattern para tornar os valores inseridos em conformidade com um padrão regex específico, ou seja, se precisar fazer algo como "Digite sua altura" no padrão "1,75m", então você devera separar esses inputs para receberem valores separadamente.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number -->
+
+  <h1>input number</h1>
+
+  <h2>Exemplo Simples</h2>
+
+  <form action="success-form.html">
+    <label for="quantity">Quantidade de produtos: <input type="number" id="quantity" name="quantity" min="1" max="100" required></label>
+    
+    <input type="submit" value="Enviar">
+  </form>
+
+  <h2>Exemplo Com Step Definido</h2>
+  
+  <form action="success-form.html">
+    <label for="quantity">Pares de produtos: <input type="number" id="quantity" name="quantity" min="2" max="100" step="2" value="2" required></label>
+    
+    <input type="submit" value="Enviar">
+  </form>
+
+  <h2>Exemplo Com Step Decimal</h2>
+  
+  <form action="success-form.html">
+    <label for="quantity">Quantidade em m²: <input type="number" id="quantity" name="quantity" min="1.5" max="150" step="1.5" value="1.5" required></label>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

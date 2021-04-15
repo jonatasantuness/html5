@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input email</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input email -->
+
+  <!-- 
+    Os elementos de input do tipo email permitem que o usuário insira e edite um endereço de e-mail ou, se o atributo múltiplo for especificado, uma lista de endereços de e-mail.
+  -->
+
+  <!-- 
+    O  valor do elemento contém uma DOMString que é validada automaticamente em conformidade com a sintaxe de e-mail. Mais especificamente, existem três formatos de valor possíveis que passarão na validação:
+
+    - Uma string vazia ("") indicando que o usuário não inseriu um valor ou que o valor foi removido.
+
+    - Um único endereço de e-mail devidamente validado. Não significa necessariamente que o endereço de e-mail exista, mas pelo menos está formatado corretamente (nomedeusuario@dominio), para uma validação mais customizada utilize o atributo pattern.
+
+    - Se o atributo múltiplo for especificado, o valor pode ser uma lista de e-mail separados por vírgula devidamente validados. Qualquer espaço em branco à direita e à esquerda é removido de cada endereço na lista.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email -->
+
+  <h1>input email</h1>
+
+  <h2>Exemplo Simples</h2>
+
+  <form action="success-form.html">
+    <label for="contactEmail">E-mail de contato: <input type="email" id="contactEmail" name="contactEmail" maxlength="50" required></label>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+  <h2>Exemplo Múltiplos Endereços de E-mail</h2>
+
+  <form action="success-form.html">
+    <!-- Agora uma lista de e-mails pode ser inserida separados por vírgulas (pode haver um espaço em branco após a virgula). -->
+    <label for="contactList">Adicione seus E-mail's de contato: <input type="email" id="contactList" name="contactList" placeholder="email1,email2" multiple required></label>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+  <h2>Exemplo com Lista de Sugestões</h2>
+
+  <form action="success-form.html">
+    <!-- Ao conectar o input com a datalist, o navegador poderá exibir uma lista de opções de sugestão do valor do e-mail. -->
+    <label for="contactEmail">Insira um e-mail: <input type="email" id="suggestedValue" list="defaultEmails" required></label>
+
+    <datalist id="defaultEmails">
+      <option value="jojo@domain.com">
+      <option value="jotunes23@domain.com">
+      <option value="jonatas@domain.com">
+    </datalist>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+  <h2>Exemplo Validação com Regex</h2>
+
+  <form action="success-form.html">
+    <label for="corpEmail">Crie seu E-mail da empresa: <input type="email" id="corpEmail" name="corpEmail" placeholder="username@jocorp.com" pattern=".+@jocorp.com" required></label>
+
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

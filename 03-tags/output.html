@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>output</title>
+</head>
+<body>
+  <!-- output -->
+
+  <!-- 
+    O elemento HTML <output> é um elemento no qual um site ou aplicativo pode injetar os resultados de um cálculo ou o resultado de uma ação do usuário. Normalmente é usado em formulários, depois de realizar cálculos ou ações baseadas na entrada do usuário podemos exibir o resultado nessa tag.
+  -->
+
+  <!--
+    Atributos:
+
+    - for: Define a relação entre o resultado e os elementos para o cálculo, indicando que estes elementos contribuiram com valores de entrada para o cálculo (ID do elemento ou lista de ID's).
+
+    - form: Define qual o formulário este campo pertence. O valor do atributo deve ser um ID de um elemento form no mesmo documento. Se este atributo não está especificado, o elemento output deve ser descendente de um elemento form. Este atributo permite que você coloque elementos output em qualquer lugar em um documento, não apenas como descendentes de seus elementos form.
+
+    - name: Define o nome do elemento.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/output -->
+
+  <h1>output</h1>
+
+  <!-- Neste exemplo o output será utilizado para exibir o valor calculado no evento oninput com base nos dados do input range. -->
+  <form oninput="result.value = parseInt(quantidade.value)">
+    <label for="quantidade">
+      Selecione a quantidade do produto:
+      <input type="range" name="quantidade" value="50">
+    </label>
+
+    <p>Quantidade Selecionada: <output name="result">50</output></p>
+  </form>
+</body>
+</html>

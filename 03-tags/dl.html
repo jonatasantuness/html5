@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dl</title>
+</head>
+<body>
+  <!-- dl -->
+
+  <!-- 
+    Listas de definição são constituidas de duas partes: um termo e uma descrição. Para codificar uma lista de definição são necessários três elementos HTML: <dl>, <dt> e <dd>.
+  -->
+
+  <!-- 
+    O elemento HTML <dl> engloba uma lista de pares de termos e descrições. Um uso comum para este elemento é para implementar um glossário, uma lista com descrição ou exibir metadados (uma lista de pares chave e valor). Essa tag é utiliza em conjunto com as tags <dt> e <dd>.
+  -->
+
+  <!-- 
+    O elemento HTML <dt> é usado para definir um termo em uma lista com descrição. Este elemento é filho do <dl>. Geralmente seguido por um elemento <dd>; ou multiplos <dt> na mesma linha indicam vários termos  sendo definidos pelo próximo element <dd>.
+  -->
+
+  <!-- 
+    O elemento HTML <dd> fornece detalhes ou uma definição mais completa do termo precedente (definido por <dt>) numa lista de descrições (<dl>).
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/dl -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/dd -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/dt -->
+
+  <h1>dl, dt e dd</h1>
+
+  <dl>
+    <dt>Sapo</dt>
+    <dd>Criatura verde e pegajosa</dd>
+    <dt>Coelho</dt>
+    <dd>Criatura peluda e fofa</dd>
+  </dl>
+
+  <!-- 
+    Você pode usar múltiplos elementos <dt> e <dd> em uma lista de definição:
+  -->
+
+  <!-- Múltiplos <dd> -->
+  <dl>
+    <dt>Arriscar</dt>
+    <dd>Chutar em gol</dd>
+    <dd>Fazer uma aposta</dd>
+  </dl>
+
+  <!-- Múltiplos <dt> -->
+  <dl>
+    <dt>Cor</dt>
+    <dt>Colorido</dt>
+    <dd>Qualquer tom que não seja preto ou branco</dd>
+  </dl>
+
+  <!-- Se preciso você pode adicionar outros elementos de bloco dentro do elemento <dd> (mas não pode dentro de <dt>). -->
+  
+  <dl>
+    <dt>Sapo</dt>
+    <dd><p>Criatura verde e pegajosa.</p></dd>
+  </dl>
+
+  <dl>
+    <dt>Sapo</dt>
+    <dd>
+      <ul>
+        <li>Pegajoso</li>
+        <li>Verde</li>
+        <li>Coacha</li>
+      </ul>
+    </dd>
+  </dl>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>samp</title>
+  <style>
+    .prompt {
+      color: #b00;
+    }
+
+    samp > kbd {
+      font-weight: bold;
+    }
+
+    .cursor {
+      color: #00b;
+    }
+  </style>
+</head>
+<body>
+  <!-- samp -->
+
+  <!-- 
+    O elemento HTML <samp> define um texto como saída de amostra de um programa de computador. Pode ser utilizado por exemplo para representar erros obtidos por um sistema.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp -->
+
+  <h1>samp</h1>
+
+  <p>Eu estava tentando inicializar meu computador, mas recebi essa mensagem:</p>
+
+  <p><samp>Keyboard not found <br>Press F1 to continue</samp></p>
+
+  <p>Quando o processo for concluído, o utilitário produzirá o texto <samp>Scan complete. Found <em>N</em> results.</samp> Então você pode prosseguir para a próxima etapa.</p>
+
+  <!-- Saída de amostra, incluindo entrada do usuário -->
+
+  <pre>
+    <samp>
+      <span class="prompt">mike@interwebz:~$</span> <kbd>md5 -s "Hello world"</kbd>
+      MD5 ("Hello world") = 3e25960a79dbc69b674cd4ec67a72c62
+      
+      <span class="prompt">mike@interwebz:~$</span> <span class="cursor">█</span>
+    </samp>
+  </pre>
+</body>
+</html>

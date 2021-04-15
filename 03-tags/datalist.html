@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>datalist</title>
+</head>
+<body>
+  <!-- datalist -->
+
+  <!-- 
+    O elemento HTML <datalist> contém um conjunto de elementos <option> que representam as opções possíveis para o valor de outros controles. Podem ser utilizadas para criar uma lista de opções para um input. O ID da tag <datalist> deve estar vinculado ao atributo 'list' da tag input.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/datalist -->
+
+  <h1>input select</h1>
+
+  <form action="success-form.html">
+    <label for="skill">Digite sua linguagem de programação favorita: <input type="text" name="skill" list="proglist"></label>
+
+    <datalist id="proglist">
+      <option value="JavaScript"></option>
+      <option value="PHP"></option>
+      <option value="Java"></option>
+      <option value="Python"></option>
+    </datalist>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input file</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+      display: block;
+      padding: .5em 0;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: .5em;
+    }
+
+    input:invalid {
+      color:red;
+    }
+
+    input:not([type='submit']):valid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- input file -->
+
+  <!-- 
+    Os elementos de input do tipo file permite que o usuário escolha um ou mais arquivos do armazenamento do dispositivo. Depois de escolhidos, os arquivos podem ser carregados para um servidor usando o envio de formulário ou manipulados usando o código JavaScript e a API de arquivo.
+  -->
+
+  <!-- O atributo de valor contém um DOMString que representa o caminho para os arquivos selecionados. Se o usuário selecionou vários arquivos, o valor será o primeiro arquivo na lista. Os outros arquivos poderão ser identificados usando a propriedade HTMLInputElement.files do input. -->
+
+  <!--
+    Notas:
+
+    - Se nenhum arquivo foi selecionado, a string é "" (vazia).
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#unique_file_type_specifiers -->
+
+  <h1>input file</h1>
+
+  <h2>Exemplo</h2>
+
+  <form action="success-form.html">
+    <!-- O atributo accept evita que outros tipos de arquivos sejam selecionados, ao selecionar o arquivo, a função de exemplo abaixo irá exibir as informações do arquivos no console. -->
+    <label for="logo">Logo: <input type="file" id="logo" name="logo" accept="image/png, image/jpeg" multiple required></label>
+
+    <div>
+      <p>Arquivos selecionado(s): <span id="fileNum">0</span></p>
+      <p>Tamanho total: <span id="fileSize">0</span></p>
+    </div>
+    
+    <input type="submit" value="Enviar">
+  </form>
+
+  <script>
+    const fileInput = document.getElementById('logo');
+
+    function updateSize() {
+      let nBytes = 0;
+      let oFiles = this.files;
+      let nFiles = oFiles.length;
+
+      console.log(oFiles);
+
+      for (let nFileId = 0; nFileId < nFiles; nFileId++) {
+        nBytes += oFiles[nFileId].size;
+      }
+
+      let sOutput = nBytes + ' bytes';
+  
+      const aMultiples = ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+
+      for (nMultiple = 0, nApprox = nBytes / 1024; nApprox > 1; nApprox /= 1024, nMultiple++) {
+        sOutput = nApprox.toFixed(3) + ' ' + aMultiples[nMultiple] + ' (' + nBytes + ' bytes)';
+      }
+
+      document.getElementById('fileNum').innerHTML = nFiles;
+      document.getElementById('fileSize').innerHTML = sOutput;
+    }
+    
+    fileInput.addEventListener('change', updateSize, false);
+  </script>
+</body>
+</html>

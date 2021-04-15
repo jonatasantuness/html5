@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas</title>
+</head>
+<body>
+  <!-- canvas -->
+
+  <!-- 
+    O elemento HTML <canvas> pode ser utilizado para desenhar gráficos utilizando (geralmente JavaScript). Por exemplo, além de desenhar gráficos, ele pode ser usado para fazer composições de fotos e também para animações.
+  -->
+
+  <!--
+    Você poderá colocar conteúdos alternativos dentro do bloco <canvas>. Este conteúdo será renderizado também em navegadores antigos e em navegadores com JavaScript desabilitado.
+  -->
+
+  <!--
+    A vantagem de usar <canvas> em relação à outros métodos como o SVG por exemplo, é o desempenho, a tag pode até utilizar o poder de processamento de placas de vídeo para renderizar seus elementos.
+  -->
+
+  <!--
+    Atributos:
+
+    - width: A largura do espaço em pixels CSS. O padrão é 300.
+
+    - height: A altura do espaço em pixels CSS. O padrão é 150.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/canvas -->
+
+  <h1>canvas</h1>
+
+  <h2>Exemplo simples</h2>
+
+  <canvas id="canvas" width="300" height="300" style="border: 1px solid #000000;">
+    Desculpe-me, seu navegador não suporta o elemento &lt;canvas&gt;.
+  </canvas>
+
+  <h2>Exemplo Manipulado com Script</h2>
+
+  <canvas id="myCanvas" width="200" height="100" style="border: 1px solid #000000;">
+  </canvas>
+
+  <script>
+    const myCanvas = document.getElementById('myCanvas');
+    const context = myCanvas.getContext('2d');
+
+    context.moveTo(0, 0);
+    context.lineTo(200, 100);
+    context.stroke();
+  </script>
+</body>
+</html>

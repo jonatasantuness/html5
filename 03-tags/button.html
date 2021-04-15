@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>button</title>
+</head>
+<body>
+  <h1>button</h1>
+
+  <!-- button -->
+
+  <!-- 
+    A tag HTML <button> representa um botão clicável.
+  -->
+
+  <!-- 
+    Notas:
+
+    - É muito mais fácil estilizar elementos <button> do que elementos <input>. Você pode adicionar conteúdo HTML (como <em>, <strong>, ou até <img>), e usar pseudo-elementos ::after e ::before para executar composições complexas, enquanto <input> aceita apenas um atributo value do tipo texto.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/button -->
+
+  <button id="myButton" autofocus>Clique aqui</button>
+
+  <script>
+    const button = document.getElementById('myButton');
+
+    button.addEventListener('click', () => {
+      button.disabled = true;
+      alert('Teste do botão!');
+    }, false);
+  </script>
+</body>
+</html>
