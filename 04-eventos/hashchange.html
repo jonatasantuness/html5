@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hashchange</title>
+</head>
+<body>
+  <!-- hashchange: é disparado quando o hash (identificador de fragmento da URL)é alterado (a parte da URL que começa com e após o símbolo #). -->
+
+  <!-- 
+    Como Testar:
+
+    Adicione ao final da url uma hash qualquer como #teste ou a hash #hello para o nosso script identificá-la.
+  -->
+  
+  <script>
+    window.addEventListener('hashchange', (event) => {
+      if (location.hash === '#hello') {
+        console.log('Hello World');
+      } else {
+        console.log('O Hash mudou!');
+      }
+    }, false);
+  </script>
+</body>
+</html>

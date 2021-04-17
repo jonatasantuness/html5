@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fases de Capturing (Captura) e Bubbling (prapagação)</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    [class^='box-'] {
+      cursor: pointer;
+      border: 2px solid #000;
+      width: 200px;
+      height: 200px;
+      padding: 2em;
+    }
+
+    .box-a {
+      background-color: lightgreen;
+    }
+
+    .box-b {
+      background-color: lightgoldenrodyellow;
+    }
+
+    .box-c {
+      background-color: lightcoral;
+    }
+
+    #exe1,
+    #exe2 {
+      margin-bottom: 10em;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    Fases de Capturing (Captura) e Bubbling (prapagação)
+
+    Quando um evento JavaScript é acionado, existem 2 fases associadas:
+
+    1. Capturing (Captura)
+    2. Bubbling (“Borbulhamento” ou Propagação)
+  -->
+
+  <!--
+    Fase de Capturing
+    
+    Por padrão, a maoiria dos eventos, como o click por exemplo, não ocorrem exatamente a partir do elemento que foi clicado, ao invés disso, o evento do click começa no node root (window) e vai descendo por toda a hierarquia do DOM até encontrar o elemento em questão (o target).
+
+    Essa é a chamada Fase de Capturing ou Captura (ou Fase 1), conforme o evento for passando por cada um dos elementos da hierarquia, se ele encontrar algum outro evento do mesmo tipo respectivamente associado, esse evento será disparado.
+  -->
+
+  <!--
+    Fase de Bubbling
+
+    Depois de percorrer todo o caminho e encontrar o target, o evento não para, ele faz o caminho inverso até retornar ao elemento root (window). Esse retorno é chamado de “Fase 2” ou Fase de Bubbling (Propagação).
+
+    Nesse retorno se houver algum evento do mesmo tipo respectivamente associado a algum elemento da hierarquia, esse evento será disparado.
+  -->
+
+  <!--
+    Event Listeners
+
+    No JavaScript, o método addEventListener pode receber 3 parâmetros:
+
+    - O nome do evento.
+
+    - O nome do event handler, função literal ou arrow function.
+
+    - O terceiro argumento é chamado de "useCapture", é um atributo booleano opcional (por padrão false), que define se devemos ou não trabalhar com o evento na Fase de Captura, se deixarmos vazio (false) os eventos serão acionados somente na fase de Bubbling, obtendo o resultado ao clicar no box "C" de (C > B > A), já com o atributo em true, obtemos (A > B > C).
+  -->
+
+  <!--
+    Interromper a propagação de um evento
+
+    O JavaScript também permite a interrupção da propagação de eventos, no terceiro exemplo vamos exibir no console somente o elemento que foi clicado.
+    
+    Para isso precisamos definir o useCapture como false (padrão) para trabalharmos a partir do elemento mais externo (que é o próprio elemento que foi clicado), ou seja, o evento deve partir do elemento para o window e não do window para o elemento.
+
+    A propagação do evento será cancelada se utilizarmos um método do objeto event chamado stopPropagation().
+  -->
+
+  <!-- https://desenvolvimentoparaweb.com/miscelanea/eventos-javascript-capturing-bubbling/#content -->
+
+
+  <figure>
+    <img src="../img/fases-event.png" width="400" title="Fases do evento">
+    <img src="../img/capturing-fase.png" width="400" title="Capturing">
+    <img src="../img/bubbling-fase.png" width="400" title="Bubbling">
+  </figure>
+
+  <hr>
+
+  <h1>Fases de Capturing (Captura) e Bubbling (prapagação)</h1>
+
+  <!-- Neste exemplo ao clicar no box "C", o evento irá partir do window e procurar o elemento 'box-c', ao encontrá-lo, ele vai disparar o evento de click do box-c e começará a propagar (ou seja entrará na fase de bubbling), e com isso os elementos acima dele na hierarquia, serão disparados também exibindo no console a ordem (C > B > A). Porém, se clicarmos em um box que está acima na hierarquia (B ou A) só serão exibidos os elementos a partir dele mesmo para cima, exemplo (B > A). -->
+  
+  <h2>Exemplo 1 - useCapture: false (Padrão)</h2>
+
+  <div id="exe1">
+    <div class="box-a">
+      A
+      <div class="box-b">
+        B
+        <div class="box-c">
+          C
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No segundo exemplo vamos atribuir o argumento useCapture = true, indicando ao event listener que queremos trabalhar com o evento na Fase de Captura, então os eventos de click só ocorrerão quando o evento sair do node root window e começar a descer pelo DOM. -->
+
+  <h2>Exemplo 2 - useCapture: true</h2>
+
+  <div id="exe2">
+    <div class="box-a">
+      A
+      <div class="box-b">
+        B
+        <div class="box-c">
+          C
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Exemplo 3 - Cancelando a propagação de Eventos</h2>
+
+  <div id="exe3">
+    <div class="box-a">
+      A
+      <div class="box-b">
+        B
+        <div class="box-c">
+          C
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $divs = document.querySelectorAll('#exe1 [class^="box-"]');
+ 
+    $divs.forEach(
+      $div => $div.addEventListener('click', logClass, false)
+    );
+      
+    function logClass() {
+      console.log(this.classList.value);
+    }
+  </script>
+
+  <script>
+    const $divs2 = document.querySelectorAll('#exe2 [class^="box-"]');
+
+    $divs2.forEach(
+      $div => $div.addEventListener('click', logClass, true)
+    );
+      
+    function logClass() {
+      console.log(this.classList.value);
+    }
+  </script>
+
+  <script>
+    const $divs3 = document.querySelectorAll('#exe3 [class^="box-"]');
+
+    $divs3.forEach(
+      $div => $div.addEventListener('click', logClass, false)
+    );
+      
+    function logClass(event) {
+      event.stopPropagation();
+      console.log(this.classList.value);
+    }
+  </script>
+</body>
+</html>

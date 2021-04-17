@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>beforeunload</title>
+</head>
+<body onbeforeunload="return debugEvent(event)">
+  <!-- beforeunload: é disparado quando o window, o document e seus recursos estão prestes a ser descarregados. -->
+
+  <!-- 
+    Como Testar:
+
+    Para testar esse evento, precisamo explicitar o retorno da função event handler com a palabra chave "return", muitos sites utilizam mal esse recurso, para por exemplo impedir que o usuário saia da página para exibir conteúdos de publicidade, então esse evento normalmente é bloqueado pelo navegador.
+
+    Esse evento só irá funcionar também se houver alguma interação na página, então abra uma página qualquer, depois abra essa página, prencha o input e tente sair ou voltar, uma caixa de dialogo do navegador aparecerá (Chrome) ignorando o nosso alert em return, exibindo somente o console.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Window/beforeunload_event -->
+
+  <input type="text">
+  
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`)
+      return `Evento ${event.type}`;
+    }
+  </script>
+</body>
+</html>

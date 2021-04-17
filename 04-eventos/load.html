@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>load</title>
+</head>
+<body>
+  <!-- load: O evento de load é acionado quando um recurso e seus recursos dependentes terminaram de carregar. -->
+
+  <!-- 
+    Como Testar:
+
+    Esse evento é disparado ao carregar totalmente os recursos:
+
+    No window ele será acionado quando toda a página é carregada e está pronta para apresentação, incluindo seu conteúdo (imagens, CSS, scripts, etc.).
+
+    No document através do evento "DOMContentLoaded" o acionamento ocorre quando o DOM estiver pronto, ou seja, quando todo o HTML já estiver parseado, o que pode acontecer antes do carregamento de imagens e outros conteúdos externos.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Window/load_event -->
+
+  <img src="../img/flowers-poster.jpg" width="500" alt="imagem de teste">
+
+  <script>
+    window.addEventListener('load', (event) => {
+      alert('Todos os recursos da página carregaram!');
+    });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      alert('O DOM já foi carregado!');
+    });
+  </script>
+</body>
+</html>

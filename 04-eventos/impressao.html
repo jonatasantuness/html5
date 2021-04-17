@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos de Impressão</title>
+</head>
+<body onafterprint="debugEvent(event)" onbeforeprint="debugEvent(event)">
+  <!-- afterprint: Disparado depois da página ser impressa. -->
+  <!-- beforeprint: Disparado antes da página ser impressa. -->
+
+  <!-- 
+    Como Testar:
+
+    Para testar esses eventos, aperte control + p, ou procure a o botão de impressão do navegador.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Window/afterprint_event -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeprint_event -->
+  
+  <script>
+    function debugEvent(event) {
+      alert(`Evento ${event.type}`);
+    }
+  </script>
+</body>
+</html>

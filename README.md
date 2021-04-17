@@ -138,3 +138,12 @@ Curso de HTML 5 COMPLETO e com Projetos Práticos para WEB.
   - [svg](03-tags/svg.html)
   - [hgroup](03-tags/hgroup.html)
   - [marquee](03-tags/marquee.html)
+
+- Seção 4: Eventos
+  - [introdução à eventos](04-eventos/introducao.md)
+  - [fases do load](04-eventos/load-fases.html)
+  - [load](04-eventos/load.html)
+  - [eventos de impressão](04-eventos/impressao.html)
+  - [beforeunload](04-eventos/beforeunload.html)
+  - [error](04-eventos/error.html)
+  - [hashchange](04-eventos/hashchange.html)

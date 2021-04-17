@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>error</title>
+</head>
+<body>
+  <!-- error: Disparado quando ocorrer um erro. -->
+
+  <!-- 
+    Como Testar:
+
+    Neste exemplo inserimos o evento handler de onerror em uma tag imagem com uma fonte que propositalmente não existe, assim podemos observar o evento de erro sendo disparado.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Element/error_event -->
+
+  <img src="images/eu-nao-existo.png" alt="Imagem que não existe" onerror="debugEvent(event)">
+  
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`);
+      alert(`Evento ${event.type}`);
+    }
+  </script>
+</body>
+</html>
