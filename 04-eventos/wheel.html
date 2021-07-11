@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wheel</title>
+  <style>
+    div {
+      background: lightcoral;
+      width: 500px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    wheel
+
+    O evento wheel disparado quando o usuário gira um botão de scroll do mouse sobre o elemento.
+  -->
+
+  <!--
+    Como Testar:
+
+    Coloque o mouse sobre o elemento e use o scroll.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Element/wheel_event -->
+
+  <h1>wheel</h1>
+
+  <div onwheel="debugEvent(event)">
+    Scroll no mouse aqui
+  </div>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`);
+    }
+  </script>
+</body>
+</html>

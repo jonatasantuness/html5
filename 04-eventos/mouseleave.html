@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mouseleave</title>
+  <style>
+    .parent {
+      width: 300px;
+      height: 300px;
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .child {
+      width: 150px;
+      height: 150px;
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .box-child {
+      width: 100px;
+      height: 100px;
+      background: white;
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    mouseleave
+
+    O evento mouseleave é disparado em um elemento quando o cursor de um dispositivo apontador (geralmente um mouse) é movido para fora dele.
+  -->
+
+  <!--
+
+    Diferença entre mouseleave e mouseout
+
+    Os eventos mouseleave e mouseout são semelhantes porém o mouseleave não borbulha e o mouseout sim. Isso significa que mouseleave é disparado quando o ponteiro sai do elemento mais externo, enquanto o mouseout é disparado quando o ponteiro deixa o elemento ou deixa um dos dos seus filhos.
+  -->
+
+  <!--
+    Combinado ao comportamento do seu evento simétrico 'mouseenter', o evento DOM mouseleave age de modo bastante similar à pseudo-classe CSS :hover.
+  -->
+
+  <!--
+    Como Testar:
+
+    Passe o mouse sobre os elementos e verifique a diferença entre os eventos.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event -->
+
+  <h1>mouseleave</h1>
+
+  <h2>Exemplo simples - mouseleave e mouseout</h2>
+
+  <div class="parent" onmouseleave="debugEvent(event)" onmouseout="debugEvent(event)">
+    <div class="child"></div>
+  </div>
+
+  <h2>Exemplo - mouseleave não borbulha</h2>
+
+  <div class="box" onmouseenter="changeBG(event, 'red')" onmouseleave="changeBG(event, 'blue')">
+    <div class="box-child"></div>
+  </div>
+
+  <h2>Exemplo - mousesout possui bubble</h2>
+
+  <div class="box" onmouseenter="changeBG(event, 'red')" onmouseout="changeBG(event, 'blue')">
+    <div class="box-child"></div>
+  </div>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`);
+    }
+
+    function changeBG(event, color) {
+      event.target.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>

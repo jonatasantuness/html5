@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>search</title>
+</head>
+<body>
+  <!--
+    search
+
+    ATENÇÂO! Este recurso não é padrão então não o use em sites de produção voltados para a Web: ele não funcionará para todos os usuários.
+
+    O evento search do DOM é disparado é disparado quando uma pesquisa é iniciada usando um elemento <input> do tipo "search".
+
+    Existem várias maneiras de iniciar uma pesquisa, como por exemplo pressionando Enter enquanto o <input> está focado.
+  -->
+
+  <!--
+    Como Testar:
+
+    Digite algo no input search e aperte Enter.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/search_event -->
+
+  <h1>search</h1>
+
+  <input type="search" onsearch="debugEvent(event)">
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`)
+    }
+  </script>
+</body>
+</html>

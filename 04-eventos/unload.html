@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>unload</title>
+</head>
+<body onunload="return debugEvent(event)">
+  <!--
+    unload
+
+    ATENÇÃO! Os desenvolvedores devem evitar o uso deste evento, especialmente no celular, o evento de descarregamento não é disparado de forma confiável. O evento unload é disparado quando o documento ou um recurso filho está sendo descarregado. É disparado após:
+
+      - beforeunload (evento cancelável).
+      - pagehide.
+
+    O documento está no seguinte estado:
+
+      - Todos os recursos ainda existem (img, iframe etc.).
+      - Nada mais é visível para o usuário final.
+      - As interações da UI são desativadas (window.open, alert, confirm, etc.).
+      - Um erro não interromperá o fluxo de trabalho de descarregamento.
+  -->
+
+  <!--
+    Como Testar:
+
+    Como o evento de unloading não é afetado por alerts ou outras interações, você só conseguirá visualizar o console da função da teste em um rápido instante ao atualizar à página.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event -->
+
+  <h1>unload</h1>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`)
+      return `Evento ${event.type}`;
+    }
+  </script>
+</body>
+</html>

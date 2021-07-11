@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>invalid</title>
+</head>
+<body>
+  <!--
+    invalid
+
+    O evento invalid é disparado quando a validação de um elemento foi verificada e não satisfaz suas restrições. Este evento pode ser útil para exibir um resumo dos problemas com um formulário no envio.
+  -->
+
+  <!--
+    A validadação dos elementos submetíveis é realizada antes de enviar seu proprietário <form> ou depois que o método checkValidity() do elemento ou do respectivo <form> é chamado.
+  -->
+
+  <!--
+    Se um formulário for submetido com algum valor inválido, os elementos submetíveis são verificados e, se um erro for encontrado, o evento invalid será disparado no elemento correspondente. quando um evento invalid é disparado devido a um valor inválido na entrada, o valor inválido é registrado.
+  -->
+
+  <!--
+    Como Testar:
+
+    Digite um numero no input maior que 10 e tente submeter o formulário, o evento invalid será disparado e também conseguiremos resgatar o valor inválido que foi digitado.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event -->
+
+  <h1>invalid</h1>
+
+  <form action="success-form.html">
+    <label>
+      Insira um numero entre 1 e 10: <input type="number" name="number" min="1" max="10" required>
+    </label>
+
+    <input type="submit" value="submit">
+
+    <p id="log"></p>
+  </form>
+
+  <script>
+    const input = document.querySelector('input');
+    const log = document.getElementById('log');
+
+    input.addEventListener('invalid', logValue);
+
+    function logValue(e) {
+      log.textContent = e.target.value
+    }
+  </script>
+</body>
+</html>

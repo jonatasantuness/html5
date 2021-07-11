@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contextmenu</title>
+</head>
+<body>
+  <!--
+    contextmenu
+
+    O evento contextmenu é disparado quando o usuário tenta abrir um menu de contexto. Este evento é normalmente acionado clicando com o botão direito do mouse ou pressionando a tecla do menu de contexto.
+  -->
+
+  <!--
+    Qualquer evento de clique com o botão direito que não esteja desabilitado (chamando o método preventDefault() do objeto event) resultará em um evento contextmenu sendo disparado no elemento alvo.
+  -->
+
+  <!--
+    Como Testar:
+
+    Clique com o botão direito em cima do input.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event -->
+
+  <h1>contextmenu</h1>
+
+  <label">
+    Clique com o botão direito do mouse:
+    <input type="text" oncontextmenu="debugEvent(event)">
+  </label>
+
+  <br>
+
+  <label">
+    Clique com o botão direito do mouse:
+    <input type="text" oncontextmenu="debugEventPreventDefault(event)">
+  </label>
+
+  <br>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`)
+    }
+
+    function debugEventPreventDefault(event) {
+      event.preventDefault();
+      console.log(`Evento preventDefault ${event.type}`)
+    }
+  </script>
+</body>
+</html>

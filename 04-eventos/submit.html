@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>submit</title>
+</head>
+<body>
+  <!--
+    submit
+
+    O evento submit é disparado quando um <form> é submetido. Importante notar que o evento submit dispara no próprio elemento <form> e não no botão ou input de submit, no entanto, o evento submit inclui uma propriedade do solicitante, que é o botão que foi chamado para acionar a solicitação de envio.
+
+    O evento de submit é disparado quando o usuário clica em um botão de submit (<button> ou <input type="submit">) ou pressiona Enter ao editar um campo (por exemplo, <input type="text">) em um formulário.
+  -->
+
+  <!--
+    Notas:
+
+    - Tentar enviar um formulário que não passa na validação aciona um evento invalid. Nesse caso, a validação impede o envio do formulário.
+  -->
+
+  <!--
+    Como Testar:
+
+    Preencha os dados e submeta o formulário.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event -->
+
+  <h1>submit</h1>
+
+  <form action="success-form.html" id="form">
+    <label>
+      Nome: <input type="text" name="nome" id="nome" maxlength="50" minlength="3" required>
+    </label>
+
+    <label>
+      E-mail: <input type="email" name="email" id="email" required>
+    </label>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="log"></p>
+
+  <script>
+    const form = document.getElementById('form');
+    const log = document.getElementById('log');
+
+    /* Ao submeter o form a página é atualizada e redirecionada para a url em action (casa tenha um), porém podemos evitar esse comportamento utilizado o método preventDefault(). */
+    function logSubmit(event) {
+      event.preventDefault();
+      console.log(event);
+      log.textContent = `Formulário enviado! Evento ${event.type}`;
+    }
+
+    form.addEventListener('submit', logSubmit);
+  </script>
+</body>
+</html>

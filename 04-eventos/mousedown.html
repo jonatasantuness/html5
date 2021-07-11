@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mousedown</title>
+</head>
+<body>
+  <!--
+    mousedown
+
+    O evento mousedown é ativado quando um botão de um dispositivo apontador é pressionado sobre um elemento. Diferente do click que só é disparado assim que você soltar o ponteiro do mouse, o mousedown é acionado assim que você pressionar o ponteiro do mouse.
+  -->
+
+  <!--
+    Como Testar:
+
+    Clique no botão e observe a ordem dos consoles.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Element/mousedown_event -->
+
+  <h1>mousedown</h1>
+
+  <button onmousedown="debugEvent(event)" onclick="debugEvent(event)">Clique Aqui</button>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`);
+    }
+  </script>
+</body>
+</html>

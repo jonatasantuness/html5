@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mouseover</title>
+  <style>
+    div {
+      width: 250px;
+      height: 250px;
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    mouseover
+
+    O evento mouseover é acionado quando um dispositivo ponteiro (geralmente um mouse) é posicionado sobre o elemento que esteja escutando ou para um de seus filhos.
+  -->
+
+  <!--
+    Como Testar:
+
+    Repare que temos outros eventos na divpara podermos ver a diferença, ao entrar com o mouse no elemento, é disparado uma única vez o evento mouseover, conforme nos movimentamos sobre o elemento, o evento mousemove disparado, e após sair do elemento é disparado o evento mouseout.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Element/mouseover_event -->
+
+  <h1>mouseover</h1>
+
+  <div class="parent"
+  onmouseover="debugEvent(event)"
+  onmousemove="debugEvent(event)"
+  onmouseout="debugEvent(event)">
+    Passe o mouse pelo quadrado!
+  </div>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`);
+    }
+  </script>
+</body>
+</html>

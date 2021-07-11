@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>change</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    change
+
+    O evento de change é disparado para os elementos <input>, <select> e <textarea> quando uma alteração no valor do elemento é confirmada pelo usuário.
+
+    Ao contrário do evento de input, o evento de change não é necessariamente disparado para cada alteração no valor de um elemento.
+  -->
+
+  <!--
+    Dependendo do tipo de elemento que está sendo alterado e da maneira como o usuário interage com o elemento, o evento de alteração é disparado em um momento diferente:
+
+    - Quando o elemento perde o foco após seu valor ser alterado, mas não confirmado (por exemplo, depois de editar o valor de <textarea> ou input tipo "text").
+
+    - Quando o elemento é: :checked (clicando ou usando o teclado) nos input do tipo "radio" e "checkbox";
+
+    - Quando o usuário confirma a mudança explicitamente (por exemplo: selecionando um valor na lista de <select>, uma data no input tipo "date", um arquivo no input tipo "file", etc.).
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Element/blur_event -->
+
+  <h1>change</h1>
+
+  <h2>Exemplo Select</h2>
+
+  <form id="exemplo-select">
+    <label>Escolha seu sabor de sorvete preferido:
+      <select class="ice-cream" name="ice-cream">
+        <option value="">Selecione um …</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="morango">Morango</option>
+        <option value="baunilha">Baunilha</option>
+      </select>
+    </label>
+
+    <div class="result1"></div>
+  </form>
+
+  <h2>Exemplo Text</h2>
+
+  <form id="exemplo-text">
+    <label for="nome">
+      Nome: <input type="text" name="nome" id="nome">
+    </label>
+
+    <div class="result2"></div>
+  </form>
+
+  <script>
+    // Exemplo Select
+
+    const selectElement = document.querySelector('.ice-cream');
+
+    selectElement.addEventListener('change', (event) => {
+      const result = document.querySelector('.result1');
+      console.log(`change -> ${event.target.value}`);
+      result.textContent = `Você escolheu um sorvete de ${event.target.value}`;
+    });
+
+    /* Repare que diferente do change, o blue só será disparado quando o usuário tirar o foco do input clicando fora por exemplo. */
+    selectElement.addEventListener('blur', (event) => {
+      const result = document.querySelector('.result');
+      console.log(`blur -> ${event.target.value}`);
+    });
+
+    // Exemplo Text
+
+    const textElement = document.querySelector('#nome');
+
+    textElement.addEventListener('change', (event) => {
+      const result = document.querySelector('.result2');
+      console.log(`change -> ${event.target.value}`);
+      result.textContent = `Nome registrado: ${event.target.value}`;
+    });
+
+    /* No input de texto e no textarea, o change não ocorre de maneira imediata, e fica semelhante ao blur, só efetivará a mudança ao perder o foco. */
+    textElement.addEventListener('blur', (event) => {
+      const result = document.querySelector('.result2');
+      console.log(`blur -> ${event.target.value}`);
+    });
+  </script>
+</body>
+</html>

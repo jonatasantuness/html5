@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dblclick</title>
+</head>
+<body>
+  <!--
+    dblclick
+
+    O evento dblclick é disparado quando um botão do dispositivo apontador (como o botão principal do mouse) é clicado duas vezes; isto é, quando é clicado duas vezes rapidamente em um único elemento em um período muito curto.
+
+    O evento dblclick é disparado após dois eventos de click (e, por extensão, após dois pares de eventos mousedown e mouseup).
+  -->
+
+  <!--
+    Como Testar:
+
+    De um duplo clique no elemento com o evento dblclick.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event -->
+
+  <h1>dblclick</h1>
+
+  <h2>Exemplo simples</h2>
+
+  <button ondblclick="debugEvent(event)">Duplo Clique Aqui</button>
+
+  <h2>Exemplo Completo</h2>
+
+  <button ondblclick="debugEvent(event)" onclick="debugEvent(event)" onmousedown="debugEvent(event)" onmouseup="debugEvent(event)">Duplo Clique Aqui</button>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`);
+    }
+  </script>
+</body>
+</html>

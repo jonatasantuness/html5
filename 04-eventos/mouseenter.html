@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mouseenter</title>
+  <style>
+    .parent {
+      width: 300px;
+      height: 300px;
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .child {
+      width: 150px;
+      height: 150px;
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .box-child {
+      width: 100px;
+      height: 100px;
+      background: white;
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    mouseenter
+
+    O evento mouseenter é disparado quando um dispositivo de apontamento (geralmente um mouse) entra sobre um elemento (para dentro dele mesmo).
+  -->
+
+  <!--
+    Diferença entre mouseover e mouseenter
+
+    O mouseenter pode causar muitas dores de cabeça devido a bolhas de eventos, ao entrar no elemento os eventos mouseover e mouseenter são disparados (nessa ordem), porém se o elemento tiver um filho ao passar o mouse sobre ele o evento mouseover será acionado novamente, e saindo do elemento filho para o elemento pai será acionado uma terceira vez.
+
+    Ou seja, os eventos são similares porém no mouseover ocorre a fase 'bubble' enquanto no mouseenter não.
+  -->
+
+  <!--
+    Combinado ao comportamento do seu evento simétrico 'mouseleave', o evento DOM mouseenter age de modo bastante similar à pseudo-classe CSS :hover.
+  -->
+
+  <!--
+    Como Testar:
+
+    Passe o mouse sobre os elementos e verifique a diferença entre os eventos.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Element/mouseenter_event -->
+
+  <h1>mouseenter</h1>
+
+  <h2>Exemplo - Diferenças mouseover e mouseenter</h2>
+
+  <div class="parent" onmouseenter="debugEvent(event)" onmouseover="debugEvent(event)">
+    <div class="child"></div>
+  </div>
+
+  <h2>Exemplo - Combinando mouseenter com mouseleave</h2>
+
+  <div class="box" onmouseenter="changeBG(event, 'red')" onmouseleave="changeBG(event, 'blue')">
+    <div class="box-child"></div>
+  </div>
+
+  <h2>Exemplo - mouseover tem fase bubble e mouseleave não</h2>
+
+  <div class="box" onmouseover="changeBG(event, 'red')" onmouseleave="changeBG(event, 'blue')">
+    <div class="box-child"></div>
+  </div>
+
+  <h2>Exemplo - mouseover e mouseout possuem fase bubble</h2>
+
+  <div class="box" onmouseover="changeBG(event, 'red')" onmouseout="changeBG(event, 'blue')">
+    <div class="box-child"></div>
+  </div>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`);
+    }
+
+    function changeBG(event, color) {
+      event.target.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>

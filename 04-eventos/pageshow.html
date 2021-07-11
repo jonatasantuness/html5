@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pageshow</title>
+</head>
+<body onpageshow="debugEvent(event)" onload="debugEvent(event)">
+  <!--
+    pageshow
+
+    O evento pageshow é disparado para o window quando o navegador exibe a página ao usuário devido a sua navegação. Isso inclui:
+
+    - Carregamento inicial da página.
+    - Navegar para a página a partir de outra página na mesma janela ou guia.
+    - Restaurar uma página congelada em dispositivos móveis.
+    - Retornar à página usando os botões Avançar ou Voltar do navegador.
+
+    * Durante o carregamento inicial da página, o evento pageshow dispara após o evento load.
+  -->
+
+  <!--
+    Como Testar:
+
+    Abra o navegador e o evento será acionado depois do evento load.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event -->
+
+  <h1>pageshow</h1>
+
+  <img src="../img/flowers-poster.jpg" width="500" alt="teste">
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`)
+      alert(`Evento ${event.type}`);
+    }
+  </script>
+</body>
+</html>

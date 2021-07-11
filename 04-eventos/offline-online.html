@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>offline e online</title>
+</head>
+<body onoffline="debugEvent(event)" ononline="debugEvent(event)">
+  <!--
+    online e offline
+
+    Para criar um bom aplicativo off-line, primeiramente é necessário que você saiba quando o aplicativo está off-line. Consequentemente, você também precisará saber quando seu aplicativo retorna ao estado on-line novamente, ou seja, os eventos são:
+
+    1. Você precisa saber quando o usuário está on-line novamente, assim você pode sincronizar novamente com o servidor.
+
+    2. Você precisa saber quando o usuário está off-line, então você deverá agendar os acessos ao servidor para mais tarde.
+
+    Esse eventos são atrelado ao window e não ao computador como um todo, então se desativarmos a conexão da janela, o evento offline será disparado.
+  -->
+
+  <!--
+    Como Testar:
+
+    No Chrome, clique em F12 para abrir o Chrome Dev Tools, aba Network, e procure pela opção "Offline", para voltar à conexão clique em "Disable - No Throttling".
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/NavigatorOnLine/Online_and_offline_events -->
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`)
+      alert(`Evento ${event.type}`);
+    }
+  </script>
+</body>
+</html>

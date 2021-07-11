@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keydown, keypress e keyup</title>
+</head>
+<body>
+  <!--
+    keydown, keypress e keyup
+
+    O evento keydown é disparado assim que a tecla é pressionada e continua ocorrendo enquanto a tecla estiver pressionada, na ordem temos o evento keypress (que funciona de maneira similar, porém foi descontinuado segundo a documentação do MDN) e por último o evento keyup quando soltamos a tecla.
+
+    Uma diferença fundamental entre keydown e keypress, é que no keypress nem todas as teclas são tratadas pelos navegadores (em geral ele se limita apenas em disparar eventos quando a tecla, unicamente, gerar algum caractere ASCII, fazendo com que ALT, CTRL e Backspace, por exemplo, não disparem eventos).
+
+    Ou seja, se você digitar uma tecla válida como "a" por exemplo, os eventos keydown, keypress e keyup serão disparados, sendo que os eventos keydown e keypress continuam disparando enquanto a tecla estiver pressionada. Porém ao pressionar as teclas como Alt, CTRL ou Backspace, só serão disparados um único evento de keydown e um evento de keyup ao soltar a tecla.
+  -->
+
+  <!--
+    keydown
+
+    Ao utilizar o método preventDefault() no keydown, evitamos o disparo dos eventos seguintes keypress e keyup.
+
+    * Navegadores com Gecko 24 e anteriores disparam o evento keypress mesmo que o método preventDefault() do evento keydown anterior seja chamado.
+  -->
+
+  <!--
+    keypress
+
+    ATENÇÃO! Este recurso não é mais recomendado. Embora alguns navegadores ainda possam suportá-lo.
+
+    * O Chrome não dispara o keypress para atalhos de teclado conhecidos (por exemplo o F12 que aciona o Chrome Dev Tools).
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Document/keydown_event -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Document/keypress_event -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Document/keyup_event -->
+
+  <h1>keydown, keypress e keyup</h1>
+
+  <h2>Exemplo - Ordem dos eventos</h2>
+
+  <input type="text" onkeydown="debugEvent(event)" onkeypress="debugEvent(event)" onkeyup="debugEvent(event)">
+
+  <h2>Exemplo - Impedindo eventos seguintes com PreventDefault()</h2>
+
+  <input type="text" onkeydown="preventKeyPress(event)">
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`)
+    }
+
+    function preventKeyPress(event) {
+      event.preventDefault();
+      console.log(`Evento ${event.type}`)
+    }
+  </script>
+</body>
+</html>

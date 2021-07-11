@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>focus</title>
+</head>
+<body>
+  <!--
+    focus
+
+    O evento focus é acionado assim que um elemento recebe um foco. O grande diferencial entre este evento e o evento focusin, é que esse segundo "borbulha", ou seja, tem o efeito de propagação.
+  -->
+
+  <!--
+    Como Testar:
+
+    Foque no elemento input através do mouse ou da tecla tab.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Element/focus_event -->
+
+  <h1>focus</h1>
+
+  <input type="text" onfocus="debugEvent(event)">
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`)
+    }
+  </script>
+</body>
+</html>

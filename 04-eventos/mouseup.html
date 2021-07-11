@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mouseup</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      width: 560px;
+      height: 360px;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    mouseup
+
+    O evento mouseup é disparado  quando um dispositivo apontador (como um mouse ou trackpad) é liberado enquanto o ponteiro está localizado dentro dele. O mouseup é o contraponto mousedown.
+
+    O evento click é semelhante, porém o click ocorre após o evento de mousedown e mouseup, nessa ordem.
+
+    Utilizando os eventos mousedown, mousemove, e mouseup combinados, podemos por exemplo criar uma área para o usuário desenhar na tela utiilzando HTML5 canvas.
+  -->
+
+  <!--
+    Como Testar:
+
+    No primeiro exemplo clique no botão e observe a ordem dos consoles. No segundo exemplo clique e arraste para desenhar na tela.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/Element/mouseup_event -->
+
+  <h1>mouseup</h1>
+
+  <button
+    onmouseup="debugEvent(event)"
+    onmousedown="debugEvent(event)"
+    onclick="debugEvent(event)">
+    Clique Aqui
+  </button>
+
+  <h2>Exemplo Desenho com HTML5 canvas</h2>
+
+  <canvas id="drawArea" width="560" height="360"></canvas>
+
+  <script>
+    // Exemplo simples
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`);
+    }
+
+    // Exemplo Desenho em HTML5 canvas
+    let isDrawing = false;
+    let x = 0;
+    let y = 0;
+
+    const drawArea = document.getElementById('drawArea');
+    const context = drawArea.getContext('2d');
+
+
+    // Add the event listeners for mousedown, mousemove, and mouseup
+    drawArea.addEventListener('mousedown', e => {
+      x = e.offsetX;
+      y = e.offsetY;
+      isDrawing = true;
+    });
+
+    drawArea.addEventListener('mousemove', e => {
+      if (isDrawing === true) {
+        drawLine(context, x, y, e.offsetX, e.offsetY);
+        x = e.offsetX;
+        y = e.offsetY;
+      }
+    });
+
+    window.addEventListener('mouseup', e => {
+      if (isDrawing === true) {
+        drawLine(context, x, y, e.offsetX, e.offsetY);
+        x = 0;
+        y = 0;
+        isDrawing = false;
+      }
+    });
+
+    function drawLine(context, x1, y1, x2, y2) {
+      context.beginPath();
+      context.strokeStyle = 'black';
+      context.lineWidth = 1;
+      context.moveTo(x1, y1);
+      context.lineTo(x2, y2);
+      context.stroke();
+      context.closePath();
+    }
+  </script>
+</body>
+</html>

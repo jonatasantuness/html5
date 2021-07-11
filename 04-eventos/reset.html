@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reset</title>
+</head>
+<body>
+  <!--
+    reset
+
+    O evento reset é disparado quando um <form> é redefinido.
+  -->
+
+  <!--
+    Como Testar:
+
+    Digite algo no input e clique no botão de reset.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset_event -->
+
+  <h1>reset</h1>
+
+  <form id="form">
+    <label>Texto de teste: <input type="text"></label>
+    <button type="reset">Resetar</button>
+  </form>
+
+  <p id="log"></p>
+
+  <script>
+    const form = document.getElementById('form');
+    const log = document.getElementById('log');
+
+    function logReset(event) {
+      log.textContent = 'Formulário resetado!';
+    }
+
+    form.addEventListener('reset', logReset);
+  </script>
+</body>
+</html>

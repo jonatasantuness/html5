@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input</title>
+</head>
+<body>
+  <!--
+    input
+
+    O evento input do DOM é disparado de maneira sincrônica quando o valor de um elemento <input>, <select>, ou <textarea> é alterado. Ou seja para cada entrada que for inserida no elemento, um evento input será disparado.
+  -->
+
+  <!--
+    Como Testar:
+
+    Começe a digitar no input e repare que a cada único input, um log no console será exibido.
+  -->
+
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/HTMLElement/input_event -->
+
+  <h1>focus</h1>
+
+  <input type="text" oninput="debugEvent(event)">
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`)
+    }
+  </script>
+</body>
+</html>

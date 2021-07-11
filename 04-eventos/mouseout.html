@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mouseout</title>
+  <style>
+    .parent {
+      width: 200px;
+      height: 200px;
+      background: lightcoral;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .child {
+      width: 150px;
+      height: 50px;
+      background: lightgreen;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    mouseout
+
+    O evento mouseout é disparado em um elemento quando um dispositivo apontador (geralmente um mouse) é usado para mover o cursor para fora do elemento ou de seus filhos.
+  -->
+
+  <!--
+    Como Testar:
+
+    Passe o mouse sobre o elemento e seus filhos e depois saia deles.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseout_event -->
+
+  <h1>mouseout</h1>
+
+  <div class="parent" onmouseout="debugEvent(event)">
+    <div class="child">
+      Passe o mouse pelo quadrado!
+    </div>
+  </div>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`);
+    }
+  </script>
+</body>
+</html>

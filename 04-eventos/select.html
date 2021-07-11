@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>select</title>
+</head>
+<body>
+  <!--
+    select
+
+     O evento select é disparado quando algum texto é selecionado. Esse evento não está disponível para todos os elementos, por exemplo, em HTML, o evento select é disparado apenas nos elementos de formulário input tipo "text" e <textarea>.
+  -->
+
+  <!--
+    Como Testar:
+
+    Digite algo nos inputs e selecione o texto digitado.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Element/select_event -->
+
+  <h1>select</h1>
+
+  <input type="text" onselect="debugEvent(event)">
+
+  <br>
+
+  <textarea onselect="debugEvent(event)"></textarea>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`)
+    }
+  </script>
+</body>
+</html>

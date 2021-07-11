@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mousemove</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    mousemove
+
+    O evento mousemove é disparado em um elemento quando um dispositivo apontador (geralmente um mouse) é movido enquanto o ponto de acesso do cursor está dentro dele (incluindo elementos filhos).
+  -->
+
+  <!--
+    Como Testar:
+
+    Passe o mouse sobre o elemento e veja o console.
+  -->
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event -->
+
+  <h1>mousemove</h1>
+
+  <div onmousemove="debugEvent(event)">Passe o mouse por aqui!</div>
+
+  <script>
+    function debugEvent(event) {
+      console.log(`Evento ${event.type}`);
+    }
+  </script>
+</body>
+</html>
